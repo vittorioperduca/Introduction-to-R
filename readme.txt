@@ -1,1 +1,1 @@
-This is the repository for the document "Introduction to R"
+This is the repository for the document "Introduction to R".
