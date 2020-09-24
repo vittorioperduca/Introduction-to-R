@@ -80,7 +80,7 @@ Importing data is a fundamental step in data analysis. To load the data stored i
 `read.table()` returns a data frame:
 
 ```{r}
-url1 <- 'https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/devel/data/iris.txt'
+url1 <- 'https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/iris.txt'
 d1 <- read.table(url1,
                  # the first line contains the name of the variables
                  header = TRUE,
@@ -89,7 +89,7 @@ d1 <- read.table(url1,
 
 head (d1)
 
-url2 <- 'https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/devel/data/heart.txt'
+url2 <- 'https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/heart.txt'
 d2 <- read.table(url2,
                  header = TRUE,
                  # variables are separated by a tabulation
@@ -97,7 +97,7 @@ d2 <- read.table(url2,
 dim(d2); names(d2)
 ```
 
-For data stored in the `.Rda` or `.Rdata` format, the import is done with `load()` with the argument `file = filename`. For instance download the `Iris.Rda` file at [github.com/vittorioperduca/Introduction-to-R/blob/devel/data/Iris.Rda](https://github.com/vittorioperduca/Introduction-to-R/blob/devel/data/Iris.Rda) to your working directory and then try the following:
+For data stored in the `.Rda` or `.Rdata` format, the import is done with `load()` with the argument `file = filename`. For instance download the `Iris.Rda` file at [github.com/vittorioperduca/Introduction-to-R/blob/master/data/Iris.Rda](https://github.com/vittorioperduca/Introduction-to-R/blob/master/data/Iris.Rda) to your working directory and then try the following:
 
 ```{r}
 iris_path <- 'data/Iris.Rda' # replace with the file path
@@ -123,7 +123,7 @@ Remember that in Linux and macOS machines, `~ /` is a shortcut for `/Users/usern
 
 ## Exercice
 
-Download the text file [raw.githubusercontent.com/vittorioperduca/Introduction-to-R/devel/data/hepatitis.txt](https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/devel/data/hepatitis.txt) to your working directory.
+Download the text file [raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/hepatitis.txt](https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/hepatitis.txt) to your working directory.
 
 1. Import the dataset in `R`. Warning: missing data were coded with a `?`, read the documentation of `read.table ()`.
 2. Find the number of observations, display the names of the variables and the first six observations. Check that the value of `STEROID` for the fourth observation is missing using the appropriate function.
