@@ -1,0 +1,131 @@
+# Lists and data frames
+
+## Lists
+
+Lists are special vectors that can store elements of any mode (including other lists). 
+
+```{r}
+age = c(33,28, 33)
+names <- c('Daniel', 'Jehanne', 'Romain')
+my.list <- list(Names = names, Age = age)
+```
+
+Like any other vector, a list is indexed by the `[...]` operator, however, note that the result will be a list containing as unique element the desired item:
+
+```{r}
+my.list[1]
+mode(my.list[1])
+```
+
+To get the desired item directly, we therefore use the `[[...]]` operator or the `$` operator followed by the name of the element (if available):
+
+```{r}
+my.list[[1]]
+my.list$age
+```
+
+The elements of a list can have different lengths:
+```{r}
+city <- c('paris', 'lyon', 'lyon', 'paris', 'nantes')
+my.list$city <- city
+my.list
+```
+
+
+## Data frames
+
+The most widely data containers is the data frame, a special list of class `data.frame` in which all elements have the same length. For this reason, a data frame is represented in the form of a two-dimensional array whose columns are its elements. Typically, in a data frame the columns represent the __variables__ and the rows the __observations__. Unlike matrices, the elements of a data frame can have different modes.
+
+```{r}
+id <- c('id.453', 'id.452', 'id.455', 'id.459', 'id.458', 'id.456', 'id.450', 'id. 451')
+age <- c (19, 45, 67, 53, 17, 30, 27, 35)
+smoker <- c (TRUE, FALSE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE)
+sex <- c ('f', 'f', 'h', 'h', 'f', 'h', 'f', 'f')
+my.db <- data.frame (Id = id, Age = age, Smoker = smoker, Sex = sex); my.db
+dim(my.db); nrow(my.db); ncol(my.db)
+names(my.db)
+```
+
+A data frame being a list, we can extract a column using the `$` operator preceded by the name of the data frame and followed by the name of the column (or variable), or use the operator `[...]`
+
+```{r}
+my.db$Sex # a column of characters is automatically transformed into a factor
+my.db[, 2]
+my.db$Age[my.db$Smoker == FALSE] # simple example of selection
+```
+
+The columns are directly accessible in the workspace (without having to type the name of the data frame and the `$`) after having _attached_ the data frame:
+
+```{r}
+attach(my.db)
+Age
+```
+
+To display only the first six lines:
+```{r}
+head(my.db)
+```
+
+Similarly, `tail()` creates a data frame with the last six columns.
+
+
+## Importing and exporting data
+
+Importing data is a fundamental step in data analysis. To load the data stored in a file (texte, .csv, Excel, ...) into the workspace (ie into memory), you can use the basic function `read.table()`. The three most important arguments are:
+
+- `file`: name (and path) of the file, in quotes
+- `header`: are the elements of the first row the names of the columns?
+- `sep`: character separating the columns
+
+`read.table()` returns a data frame:
+
+```{r}
+url1 <- 'https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/devel/data/iris.txt'
+d1 <- read.table(url1,
+                 # the first line contains the name of the variables
+                 header = TRUE,
+                 # values are separated by ;
+                 sep = ';') 
+
+head (d1)
+
+url2 <- 'https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/devel/data/heart.txt'
+d2 <- read.table(url2,
+                 header = TRUE,
+                 # variables are separated by a tabulation
+                 sep = '\t') 
+dim(d2); names(d2)
+```
+
+For data stored in the `.Rda` or `.Rdata` format, the import is done with `load()` with the argument `file = filename`. For instance download the `Iris.Rda` file at [github.com/vittorioperduca/Introduction-to-R/blob/devel/data/Iris.Rda](https://github.com/vittorioperduca/Introduction-to-R/blob/devel/data/Iris.Rda) to your working directory and then try the following:
+
+```{r}
+iris_path <- 'data/Iris.Rda' # replace with the file path
+load(iris_path)
+```
+
+
+If you want to load `.Rda` or `.Rdata` files directly from an url, don't forget to use the `url()` function (this was not necessary in `read.table()`).
+
+Data can be exported either to a text file (or .csv, Excel ...) using `write.file()` or to `.rda` and `.Rdata` files at using `save()`. In both cases, the two main arguments are 
+
+- `x =` data to save 
+- `file =` the name of the file (in quotes).
+
+If the dataset is stored (or must be saved up) locally, it is necessary to know (and be able to modify) the working directory:
+
+```{r}
+getwd() # try on your machine!
+setwd('~/Documents') # to move to the Documents directory
+```
+
+Remember that in Linux and macOS machines, `~ /` is a shortcut for `/Users/username`. For Windows machines, the address syntax is slightly different. For example we use `\` instead of `/`.
+
+## Exercice
+
+Download the text file [raw.githubusercontent.com/vittorioperduca/Introduction-to-R/devel/data/hepatitis.txt](https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/devel/data/hepatitis.txt) to your working directory.
+
+1. Import the dataset in `R`. Warning: missing data were coded with a `?`, read the documentation of `read.table ()`.
+2. Find the number of observations, display the names of the variables and the first six observations. Check that the value of `STEROID` for the fourth observation is missing using the appropriate function.
+3. Calculate the mean value of `ALBUMIN` in women and men.
+4. Create a variable `NSYMP` counting the number of times a variable is equal to` yes` between `FATIGUE` and` MALAISE`. Pay attention to the format of these two variables!

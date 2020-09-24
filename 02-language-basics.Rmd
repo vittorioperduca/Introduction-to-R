@@ -1,0 +1,94 @@
+# Language basics
+
+## Assignments, arithmetic operations 
+
+There are two types of `R` commands: expressions and assignments.
+
+__Expression__
+
+```{r}
+cos(pi)
+```
+
+__Assignments and expressions__
+
+```{r}
+x <- 1 + 2 # or x = 1 + 2
+x
+y = 4
+x == y
+```
+
+Using `;` we can type two commands on the same line before executing them:
+
+```{r}
+e <- exp (1); log (e)
+```
+
+Some examples of arithmetic and Boolean operators:
+
+```{r}
+3*4
+12/3
+2^3
+sqrt (16)
+1 == 2
+1!= 1
+FALSE & TRUE # and
+FALSE | TRUE # or
+```
+
+
+## Mode, length and class
+
+In R, everything is an _object_. The _mode_ specifies what an object can contain. The main modes are:
+
+- `numeric`: real numbers
+- `character`: character strings
+- `logical`: logical values true / false
+- `list`: list, collection of objects
+- `function`: function
+
+`numeric`,` character`, and `logical` objects are _simple_ objects that can contain data of only one type. On the contrary, `list` mobjects are special objects that can contain other objects.
+
+
+You can access the mode of an object with the `mode ()` function:
+
+```{r}
+age = c(33,28, 33) # The concatenation function c() allows to create vectors
+mode(age)
+names <- c('Daniel', 'Jehanne', 'Romain')
+mode(names)
+my.list <- list(Names = names, Age = age)
+mode(my.list)
+mode(is.integer(pi))
+mode
+```
+
+Besides the mode, an object also has a _length_, defined as the number of elements it contains:
+
+```{r}
+length(age)
+length(names)
+length(my.list)
+```
+
+The _class_ of an object specifies its behavior and therefore its way of interacting with operations and functions. An important example are _data frames_: special lists whose elements all have the same length. The class of a data frame is different from that of generic lists and data frames have an indexing system that does not exist for other lists:
+
+```{r}
+class(my.list)
+my.data.frame = data.frame(names, age)
+mode(my.data.frame)
+class(my.data.frame)
+my.data.frame[1,2] # to extract the 1st element from the 2nd "column"
+# Try the following command:
+# my.list[1,2]
+```
+
+A special object is the missing value `NA`. By default, its mode is `logical`, however` NA` is neither `TRUE` nor` FALSE`. To test if a value is missing we will use the `is.na ()` function:
+
+```{r}
+NA == NA # not what we want
+is.na(NA)
+is.na(mean(c(1,4, NA)))
+```

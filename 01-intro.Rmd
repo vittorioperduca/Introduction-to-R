@@ -1,0 +1,61 @@
+# Introduction
+
+`R` is a statistical language developed from the 1990s at the University of Auckland, New Zealand. Its main implementation is the open source software (free and modifiable) `R`. `R` is normally used from the graphical user interface (GUI) and development interface RStudio.
+
+`R` is an [interpreted language](http://www.france-ioi.org/algo/course.php?idChapter=561&idCourse=2368) (like` Python`) that we use from the command line:
+
+```{r}
+print ('Hello world!')
+```
+
+Alternatively, you can run a script, that is a series of commands found in a file with the extension `.R`.
+
+The `R` user community is very active in the scientific world (statistics, data science, bioinformatics, social sciences, ...) and more and more in companies. One of the advantages of `R` is the wealth of _packages_ developed by users and developers that can be installed to increase its capabilities in many areas of statistics.
+
+In addition, `R` has a very complete documentation. You can access help by typing `?` followed by the _function_ you are interested in:
+
+```{r}
+? rnorm
+```
+
+You can also find a lot of information on the web: by searching on Google for a problem related to an `R` task, you almost always find an answer (often in threads opened on [Cross Validated](https: // stats .stackexchange.com /)).
+
+## How to use this document
+
+Although basic objects and commands are covered, this introduction is not a complete reference to the `R` language, so you will have to use the help and search for information on the web. Before moving on to the exercises at the end of each chapter, you are encouraged to type the commands and understand the result: the best way to learn a language is to write and debug lots of lines of code!
+
+__Give some references??__
+
+
+## Installing R and Rstudio
+
+1. Download the `R` distribution that is appropriate for your machine from [https://cran.r-project.org/](https://cran.r-project.org/) and install it by double-clicking on the installation file.
+2. Dowanload and install RStudio Desktop from [https://rstudio.com/products/rstudio/download/](https://rstudio.com/products/rstudio/download/).
+
+
+## Getting started with RStudio
+
+The RStudio workspace is generally divided into four pans: starting from the top left and going clockwise we find:
+
+1. a script editor
+2. the environment listing the variables in memory and the history of commands that were executed
+3. a window for graphical outputs, the help, and the file and package managers.
+4. the `R` console, ie the command line.
+
+Typically we type the code in the editor and then run it in the console. To do this we place the cursor in the line we want to execute and we send the command to the console using the combination `cmd Return` in macOS and` ctrl Return` under Linux and Windows.
+
+## Packages
+
+To install a package from the console:
+
+```{r, eval = FALSE}
+install.packages("dplyr")
+# download and install the dplyr package used for data manipulation
+```
+
+Once a package is installed, it will have to be loaded into memory each time a new session is opened:
+
+```{r, eval = FALSE}
+library(dplyr) # quotes are not needed here
+# require(dplyr) # equivalent function
+```
