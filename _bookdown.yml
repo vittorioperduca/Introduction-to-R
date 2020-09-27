@@ -1,3 +1,5 @@
+book_filename: "Introduction-R"
 delete_merged_file: true
-output_dir: "docs"
-view: https://vittorioperduca.github.io/Introduction-to-R/%s
+language:
+  ui:
+    chapter_name: "Chapter "

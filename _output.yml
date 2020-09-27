@@ -6,7 +6,6 @@ bookdown::gitbook:
         <li><a href="./">An Introduction to R</a></li>
       after: |
         <li><a href="https://vittorioperduca.github.io/Introduction-to-R/" target="blank">Published with bookdown</a></li>
-    edit: https://vittorioperduca.github.io/Introduction-to-R/%s
     download: ["pdf"]
     sharing:
       facebook: no

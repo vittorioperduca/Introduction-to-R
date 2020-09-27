@@ -24,8 +24,9 @@ You can also find a lot of information on the web: by searching on Google for a 
 
 Although basic objects and commands are covered, this introduction is not a complete reference to the `R` language, so you will have to use the help and search for information on the web. Before moving on to the exercises at the end of each chapter, you are encouraged to type the commands and understand the result: the best way to learn a language is to write and debug lots of lines of code!
 
-__Give some references??__
+## Useful references
 
+A complete reference to `R` is the official introduction that can be found on the CRAN website: [https://cran.r-project.org/doc/manuals/R-intro.html](https://cran.r-project.org/doc/manuals/R-intro.html). For French readers, an excellent reference is Vincent Goulet's book _Introduction à la programmation R_, which can be downloaded at [https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf](https://cran.r-project.org/doc/contrib/Goulet_introduction_programmation_R.pdf)
 
 ## Installing R and Rstudio
 

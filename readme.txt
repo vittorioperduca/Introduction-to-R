@@ -1,1 +1,1 @@
-This is the repository for the document "Introduction to R".
+This is the repository for the document "Introduction to R" build with the R package bookdown.
