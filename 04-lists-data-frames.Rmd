@@ -115,11 +115,11 @@ Data can be exported either to a text file (or .csv, Excel ...) using `write.fil
 If the dataset is stored (or must be saved up) locally, it is necessary to know (and be able to modify) the working directory:
 
 ```{r}
-getwd() # try on your machine!
-setwd('~/Documents') # to move to the Documents directory
+# getwd() # try on your machine!
+# setwd('~/Documents') # to move to the Documents directory
 ```
 
-Remember that in Linux and macOS machines, `~ /` is a shortcut for `/Users/username`. For Windows machines, the address syntax is slightly different. For example we use `\` instead of `/`.
+Remember that in Linux and macOS machines, `~/` is a shortcut for `/Users/username`. For Windows machines, the address syntax is slightly different. For example we use `\` instead of `/`.
 
 ## Exercice
 

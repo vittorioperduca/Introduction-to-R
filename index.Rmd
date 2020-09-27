@@ -3,20 +3,19 @@ title: "An Introduction to R"
 author: "Vittorio Perduca (Université de Paris)"
 date: "September 2020"
 site: bookdown::bookdown_site
-output: bookdown::gitbook
 documentclass: book
+bibliography: [ref.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: vittorioperduca/Introduction-to-R
-description: "Introduction to R prepared for the M1 AIRE bootcamp, Fall 2020 using the bookdown package"
+description: "Introduction to R prepared for the M1 AIRE bootcamp, Fall 2020, using the bookdown package."
 ---
 
 # Welcome
 
 This document is a tutorial for self-learning the basic use of `R`. It was prepared for the students enrolled in the first year of the [AIRE Life Sciences Master Program](https://www.cri-paris.org/en/education#04._aire-master) of the Centre de Recherche Interdisciplinaire at the Université de Paris. 
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.align = "center", out.width="90%"}
 knitr::include_graphics('images/san-restituto.jpg')
 ```
 
-This document was written in `RMarkdown` with `bookdown` and is under continuous development, please report any issues to vittorio.perduca@u-paris.fr. This work is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+This document was written in with the `R` package `bookdown` [@R-bookdown], [@bookdown2016] and is under continuous development, please report any issues to `vittorio.perduca at u-paris.fr`. This work is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
