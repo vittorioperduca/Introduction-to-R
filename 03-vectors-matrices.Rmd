@@ -185,3 +185,5 @@ Any variable defined in a function is _local_ and does not appear in the workspa
 ```{r, eval = FALSE}
 z
 ```
+
+## Exercices

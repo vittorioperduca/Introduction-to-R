@@ -1,0 +1,175 @@
+# Base graphics 
+
+## Basic constructions and scatter plots
+
+We have already seen how to add a line to a scatter plot, to complete the graph we can specify a title, change the axis labels, and add a legend:
+
+```{r}
+plot(wt, mpg,
+     main = 'Weight and consumption of cars',
+     xlab = 'weight', ylab = 'consumption') # xlab = label x axis
+abline(h = mean (mpg), col = 2, lty = 2) # h = horizontal line, col = color, lty = line type
+legend(x = 'topright', lty = 2, col = 2, legend = 'average consumption')
+# x = legend location
+```
+
+We can also add a third dimension by coloring the points according to a condition:
+
+```{r}
+plot(wt, mpg,
+     pch = 19, # pch = type of point
+     col = (mpg >= mean (mpg)) + 1 # 1 = black, 2 = red
+)
+abline(h = mean(mpg), col = 2, lty = 2) # h = horizontal line, col = color, lty = line type
+legend(x = 'topright',
+       pch = 19,
+       col = 2: 1,
+       legend = c ('cons> = average', 'cons <average'), # legend = vector with labels
+       bty = 'n' # no frame around the legend
+)
+```
+
+In general, `abline(a, b)` allows to add a line with intercept `a` and slope` b` to an existing plot. For example, an alternative way to add the regression line is as follows:
+
+```{r, eval = FALSE}
+intercept = coef(m)[1]
+slope = coef(m)[2]
+plot(wt, mpg, main = 'Line of least squares')
+abline(a = intercept, b = slope)
+```
+
+To add any line (not necessarily a straight line) we use the `lines()` function. For example, to add the _lowess_ (locally-weighted polynomial regression) smoothing curve:
+
+```{r}
+plot(wt, mpg, main = 'Smoothing curve')
+lines(lowess (mpg ~ wt), # lines (): to add a curve
+      col = 'blue', # same as col = 4
+      lwd = 2) # lwd = line thickness
+```
+
+We can add new points using `points()`:
+
+```{r}
+plot(wt, mpg, main = 'Smoothing curves')
+lines(lowess (mpg ~ wt), col = 'blue', lwd = 2)
+outliers = cbind(c(4.5,4.6,5), c(26,26,30))
+points(outliers, pch = 2) # pch = 2 for triangles
+lines(lowess (c (wt, outliers[, 1]),
+              c (mpg, outliers[, 2])),
+      col = 2, lwd = 2)
+legend (x = 'bottomleft', col = c (4,2), lwd = 2, legend = c ('without outliers', 'with outliers'), bty = 'n')
+```
+
+We can control the range of axes using `xlim()` and `ylim()`:
+
+```{r}
+plot(wt, mpg, main = 'Same data with different scale',
+     xlim = c (0, 25),
+     ylim = c (0, 100))
+```
+
+
+## Line graphs
+
+The `lines()` function adds a line to an existing graph and cannot be used to create a new graph. To draw a line connecting the successive elements of a vector we will rather use `plot(x = vector, type = l)`:
+
+```{r}
+mydata = cos(2 * pi / 12 * (1:36)) + rnorm (36,0, .2) # data simulation
+plot(mydata, type = 'l', main = 'type = l')
+```
+
+The `type` parameter allows you to connect (or not) the points in different ways:
+
+```{r}
+par(mfrow = c (2,2)) # explained in the next section
+plot(mydata, type = 'p', main = 'type = p') # default
+plot(mydata, type = 'o', main = 'type = o')
+plot(1: 10, type = 'S', main = 'type = S') # steps 1
+plot(1: 10, type = 's', main = 'type = s') # steps 2
+```
+
+With `plot = 'h'` we get a bar plot:
+
+```{r}
+plot (1: 10, type = 'h', main = 'type = h')
+```
+
+
+## Graphical parameters
+
+We have already seen that it is possible to control certain graphical elements using parameters:
+
+Element | Parameter
+------- | ---------
+point | `pch`
+type of line graph | `type`
+color | `col`
+line | `lty`,` lwd`
+axis label | `xlab`,` ylab`
+axis dimensions | `xlim`,` ylim`
+label dimensions | `cex`
+orientation axes labels | `las`
+
+See `?par` for a description of the values that these parameters can take.
+
+To impose parameters on all the graphics produced during a session, we will use the `par()` function. `par()` is often used to view two or more plots in the same window with the parameter `mfrow = c(l, c)`. In this case the graphs are displayed in a grid with `l` rows and `c` columns. Try the following:
+
+```{r}
+# opar = par () # to be able to reset with the initial parameters
+par(mfrow = c (1,2))
+plot(wt, mpg, main = 'Weight, consumption')
+boxplot(hp, main = 'Power')
+```
+
+Changes are implemented until when the session is closed, or the graphics engine is reset by `dev.off()` or by clicking on the `Clear all plots` brush in `RStudio`.
+
+`par()` is also used to change the size of the margins. This is sometimes useful when the labels on the axes do not fit in the window, as in this example:
+
+```{r}
+mydata = as.factor(sample (x = c ('Paris', 'London', 'Brussels', 'Washington'),
+                           replace = T,
+                           prob = c (.1, .5, .2, .1),
+                           size = 100)) # simulation of a qualitative variable
+barplot(summary (mydata),
+        width = .1,
+        horiz = T,
+        las = 2)
+```
+
+We modify the parameter which sets the left margin:
+
+```{r}
+par(mar = c(5, 6, 4, 2) + 0.1) # the second component of mar gives the left margin
+# Default is c (5, 4, 4, 2) + 0.1
+barplot(summary (mydata),
+        width = .1,
+        horiz = T,
+        las = 2)
+```
+
+## Histograms
+
+As we have already noted in the subsection \@ref(quant-var), by default, `hist()` displays the histogram with the counts. To display the histogram in the density scale we use the option `freq = FALSE`. In this case, the area of each rectangle will be equal to the proportion of observations in the corresponding class (so that the total area of all the rectangles is one).
+
+```{r, eval = FALSE}
+par(mfrow = c (1,2))
+hist(mpg) # freq = TRUE
+hist(mpg, freq = FALSE)
+```
+     
+To superimpose the curve of a given density:
+
+```{r}
+mydata = rnorm (1000,0,1) # simulation of 1000 observations N (0,1)
+hist(mydata, freq = F, main = 'Histogram and theoretical density')
+curve(dnorm, # the density function of N (0,1)
+      from = -5, to = 5, # the range
+      add = TRUE) # because we want to add the density of N (0,1) to the histogram
+```
+
+Rather than viewing the histogram of the data, we can show the estimated density (using kernel density estimation methods):
+
+```{r}
+hist(mpg, freq = F, main = 'Histogram and estimated density')
+lines(density (mpg), col = 2)
+```

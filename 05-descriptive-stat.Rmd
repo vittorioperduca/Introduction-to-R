@@ -1,0 +1,233 @@
+# Descriptive statistics
+
+## Data used
+
+Basic functions for graphics and descriptive statistics will be illustrated using the `mtcars` dataset available in `R`. For a description of this dataset, see the help: `?mtcars`. We can also get an idea of the class and content of `mtcars` with `str()`:
+
+```{r}
+str(mtcars)
+```
+
+The variable `cyl` represents the number of cylinders with three possible modalities (4, 6 or 8), so it is natural to convert it into a factor:
+
+```{r}
+mtcars$cyl.factor <- as.factor (mtcars $ cyl)
+attach (mtcars)
+```
+
+## Univariate analysis
+
+### Quantitative variables {#quant-var}
+
+For a quantitative variable, the basic statistics that can be calculated are the minimum, the maximum, the mean, the variance and the standard deviation, the median and the other quantiles (remember that the quantile of order $p$ is the value $q$ such that $p$ is the proportion of observed values less than $q$). 
+
+Try the following commands
+
+```{r, eval = FALSE}
+min(mpg)
+max(mpg)
+range(mpg)
+mean(mpg)
+var(mpg)
+sd(mpg)
+median(mpg)
+quantile(mpg)
+quantile(mpg, probs = 0.99) # for the 99th percentile
+quantile(mpg, probs = c(0.01, 0.1, 0.9, 0.99))
+```
+
+If the input vector contains missing data, we can exclude them from the statistic calculation using the option `na.rm = TRUE`.
+
+The generic `summary()` function allows to quickly describe the distribution of a sample:
+
+```{r}
+summary(mpg)
+```
+
+An useful tool to show a sample distribution is the _boxplot_:
+
+```{r}
+boxplot(mpg)
+```
+
+We recall that in a boxplot:
+
+- The height (or length if we choose the option `horizontal = TRUE`) of the box is defined by the first and third quartiles $q_1$ and $q_3$.
+- The horizontal segment corresponds to the median $m = q_2$.
+- The whisker at the bottom starts from $q_1$ and goes down to the minimum of the sample if there are no extreme points on the left, ie values less than $q_1-1.5\times (q_3-q_1)$. If there are extreme points on the left, the whisker stops precisely at the smallest point greater than the threshold $q_1-1.5\times (q_3-q_1)$. In this case, we place the extreme points below the whisker.
+- Similarly, the whisker at the top starts from $q_3$ and goes up to the maximum of the sample if there are no extreme points on the right, ie values greater than $q_3+1.5 \times(q_3-q_1)$. If there are extreme points on the right, the whisker stops at the greatest point less than the threshold $q_3+1.5\times (q_3-q_1)$, and we place the extreme points above of it.
+
+Try the following:
+
+```{r}
+u <- c(mpg, 3.5, 2.7) # adding two very low values
+boxplot(u)
+q1 <- quantile(u, .25); q3 <- quantile(u, .75)
+abline(h = median(u), col = 2, lwd = 2)
+abline(h = q1, col = 2, lwd = 2); abline(h = q3, col = 2, lwd = 2)
+abline(h = max(u), col = 3, lwd = 2)
+# u[u < q1-1.5*(q3-q1)] # extreme points on the left
+abline(h = min(u[u >= q1-1.5*(q3-q1)]), col = 3, lwd = 2)
+abline(h = min(u), col = 4, lwd = 2)
+```
+
+The other graphical tool to represent the distribution of a quantitative variable is the histogram:
+
+```{r}
+hist(mpg)
+# Try the following:
+# hist (mtcars$mpg, breaks = 20) # if we want 20 + 1 intervals
+# we specify by hand the points which define the intervals:
+# hist (mtcars$mpg, breaks = c (10, 15, 18, 20, 22, 25, 35))
+```
+
+By default the vertical axis gives the number of observations in each interval. If we want to plot the histogram in the _density_ scale, we have to use the option `freq = FALSE`. In this case we recall that the proportion of observations in each interval is given by the area of the corresponding rectangle:
+
+```{r}
+hist(mpg, freq = FALSE)
+# relative frequency of observations in the [10,15] range:
+# the area of the first rectangle is
+# mean(10 <= mpg & mpg <= 15)
+# to verify this, we divide the area by the base length and show
+# that this is precisely the height of the rectangle:
+abline(h = mean(10 <= mpg & mpg <= 15)/5, col = 2)
+```
+
+We can also compare the distribution of the sample with the theoretical distribution of the standard normal distribution through a _QQ-plot_. This plot compare the empircal quantiles of the sample with the theoretical quantiles of the standard normal, if the observations in the sample were normally distributed than the points in the QQ-plot should be aligned along the bisector:
+
+```{r}
+qqnorm(mpg)
+qqline(mpg) # the line sample quantiles = theoretical quantiles
+```
+
+__Remark.__ Compare the previous QQ-plot to that of the _standardized_ sample:
+
+```{r, eval = FALSE}
+mpg.stand <- (mpg-mean(mpg))/sd(mpg) # we standardize mpg
+qqnorm(mpg.stand); qqline(mpg.stand)
+```
+
+What happened? Note that the distribution of quantiles did not change:
+
+```{r, eval = FALSE}
+hist(quantile(mpg))
+hist(quantile(mpg.stand))
+```
+
+
+### Qualitative variables
+
+The `summary()` and `table()` functions applied to a factor (or a vector of characters) count the occurrences of the different levels.
+
+```{r}
+summary(cyl.factor)
+table(cyl.factor)
+```
+
+To get the proportions:
+```{r}
+prop.table(table (cyl.factor))
+```
+
+If there are missing values, `summary ()` also counts the `NA`:
+```{r}
+x <- as.factor(c('a', 'a', 'b', 'c', NA, 'c'))
+summary(x)
+table(x)
+prop.table(table(x)) # counts are divided by the total number of non-missing values
+prop.table(summary(x)) # counts are divided by the total number of values
+```
+
+We can use a _bar plot_ or a pie chart (not recommended) to represent occurrences:
+
+```{r}
+barplot(table(cyl.factor))
+pie(summary(cyl.factor))
+```
+
+
+## Bivariate analysis
+
+### Quantitative variable vs quantitative variable
+
+We consider two quantitative variables measured on the same individuals.
+
+For two quantitative variables, we can compute their covariance and linear correlation:
+
+- the covariance measures the average joint deviation from the means of the two variables
+- Pearson's linear correlation coefficient $\rho$ measures the intensity of linear dependence. $\rho$ is comprised between $-1$ and $1$: its value is close to $1$ (resp. $-1$) if there is a positive (resp. negative) linear dependence while its value is close to $0$ if there is no linear dependence.
+
+```{r, eval = FALSE}
+cov(mpg, wt)
+cor(mpg, wt)
+# Try this:
+# cov(mpg, wt)/sd(mpg)/sd(wt)
+```
+
+Another type of correlation is Spearman's correlation measuring the linear correlation between the _ranks_ of the values of the two variables:
+
+```{r, eval = FALSE}
+cor(mpg, wt, method = 'spearman')
+# Try this
+# cor(rank(mpg), rank(wt))
+```
+
+To graphically represent two quantitative variables we will use a a _scatter plot:_
+
+```{r}
+plot(x = wt, y = mpg) # x, y = coordinates of the points
+# Alternative: 
+# plot (wt ~ mpg) # where the ~ reads "wt according to mpg"
+```
+
+To find the least squares line (ie the linear model that best fits the data) and add it to the data:
+
+```{r}
+m <- lm(mpg ~ wt)
+summary(m)
+# try:
+# slope <- sum ((wt-mean(wt)) * (mpg-mean(mpg))) / sum((wt-mean (wt))^2)
+# intercept <- mean (mpg) - slope * mean (wt)
+plot(mpg ~ wt)
+abline(m, col = "red")
+```
+
+
+### 3.2 Qualitative variable vs qualitative variable
+
+We consider two qualitative variables measured on the same individuals. For these variables, we can make contingency tables and calculate the total and marginal relative frequencies (in rows and columns). Try the following:
+
+```{r, eval = FALSE}
+t <- table(cyl, am)
+# cyl and am are digital vectors,
+# but to build the contingency table
+# table() counts their terms.
+t
+prop.table(t) # Prob(cyl, am)
+prop.table(t, margin = 1) # P(am | cyl = 4), P(am | cyl = 6), P(am | cyl = 8)
+prop.table(t, margin = 2) # P(cyl | am = 0), P(cyl | am = 1)
+```
+
+The corresponding graphic is the _mosaic plot_:
+
+```{r}
+par(mfrow = c (1,2)) # to put two charts side by side
+mosaicplot(table(cyl, am)) # P(am | cyl = 4), P(am | cyl = 6), P(am | cyl = 8)
+mosaicplot(table(am, cyl)) # P(cyl | am = 0), P(cyl | am = 1)
+```
+
+### Quantitative variable vs qualitative variable
+
+To evaluate a function `f` on the values of a `y` for each level of a factor `x` we use` tapply (X = y, INDEX = x, FUN = f)`. This is very useful when we want to calculate the statistics of a quantitative variable `y` grouped according to the levels of a qualitative variable` x`. To see this, try the following:
+
+```{r, eval = FALSE}
+tapply(mtcars$mpg, mtcars$cyl, mean) # the average miles per gallon according to the number of cylinders
+tapply(mtcars$mpg, mtcars$cyl, summary)
+```
+
+Graphically, we can build the boxplot of the quantitative variable for each level of qualitative variable:
+
+```{r}
+boxplot(mpg ~ cyl, data = mtcars)
+```
+

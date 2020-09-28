@@ -18,4 +18,4 @@ This document is a tutorial for self-learning the basic use of `R`. It was prepa
 knitr::include_graphics('images/san-restituto.jpg')
 ```
 
-This document was written in with the `R` package `bookdown` [@R-bookdown], [@bookdown2016] and is under continuous development, please report any issues to `vittorio.perduca at u-paris.fr`. This work is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+This document was written with the `R` package `bookdown` [@R-bookdown], [@bookdown2016] and is under continuous development, please report any issues to `vittorio.perduca at u-paris.fr`. This work is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
