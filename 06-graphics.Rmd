@@ -173,3 +173,41 @@ Rather than viewing the histogram of the data, we can show the estimated density
 hist(mpg, freq = F, main = 'Histogram and estimated density')
 lines(density (mpg), col = 2)
 ```
+
+## Exercises
+
+1. We consider the `midwest` dataset from the `ggplot2` package (an advanced graphics package). 
+    - Install and charge the package. 
+    - Consult the help for the description of the variables in `midwest`. 
+    - Reproduce the following graphics using basic functions:
+    
+```{r,echo=FALSE, warning=FALSE, message=FALSE}
+library(ggplot2)
+
+par(mfrow = c(1,2))
+plot(midwest$area, midwest$poptotal,
+     pch = 19,
+     xlab = 'Surface', ylab='Population',
+     col = midwest$inmetro+1, 
+     # inmetro=0=rural hence rural=0+1=black
+     # inmetro=1=urban hence urban=1+1=red
+     main = 'Counties')
+legend(x = 'topleft', pch=19, 
+       col=1:2, legend = c('Rural', 'Urban'),
+       box.lty=0)
+
+plot(midwest$area, midwest$poptotal,
+     pch = as.numeric(as.factor(midwest$state)),
+     col = midwest$inmetro+1,
+     xlab = 'Surface', ylab='Population',
+     main = 'Contées américaines')
+legend(x = 'topleft', pch=c(1:5,1,1),
+       col = c(rep(1,5),1:2),
+       legend = c(levels(as.factor(midwest$state)),'Rural','Urbain'),
+       box.lty=0)
+```
+
+2. We consider the `adult` dataset available on the site [archive.ics.uci.edu/ml/datasets/Adult](https://archive.ics.uci.edu/ml/datasets/Adult). The dataset consists of 48,842 rows and 14 columns. 
+    - Import the data into `R` from the file `adult.data`. Look in the `adult.names` file for the names of the variables. 
+    - Describe each variable appropriately according to its type.
+    - Describe the relationship between the variables `age` and` class`.
