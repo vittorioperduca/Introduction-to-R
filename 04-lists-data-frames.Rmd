@@ -121,7 +121,7 @@ If the dataset is stored (or must be saved up) locally, it is necessary to know 
 
 Remember that in Linux and macOS machines, `~/` is a shortcut for `/Users/username`. For Windows machines, the address syntax is slightly different. For example we use `\` instead of `/`.
 
-## Exercice
+## Exercise
 
 Download the text file [raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/hepatitis.txt](https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/hepatitis.txt) to your working directory.
 

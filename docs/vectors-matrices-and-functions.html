@@ -148,13 +148,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#operations-on-numerical-vectors-and-matrices"><i class="fa fa-check"></i><b>4.3</b> Operations on numerical vectors and matrices</a></li>
 <li class="chapter" data-level="4.4" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#factors"><i class="fa fa-check"></i><b>4.4</b> Factors</a></li>
 <li class="chapter" data-level="4.5" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#user-defined-functions"><i class="fa fa-check"></i><b>4.5</b> User-defined functions</a></li>
-<li class="chapter" data-level="4.6" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#exercices"><i class="fa fa-check"></i><b>4.6</b> Exercices</a></li>
+<li class="chapter" data-level="4.6" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#exercises"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html"><i class="fa fa-check"></i><b>5</b> Lists and data frames</a><ul>
 <li class="chapter" data-level="5.1" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#lists"><i class="fa fa-check"></i><b>5.1</b> Lists</a></li>
 <li class="chapter" data-level="5.2" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#data-frames"><i class="fa fa-check"></i><b>5.2</b> Data frames</a></li>
 <li class="chapter" data-level="5.3" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>5.3</b> Importing and exporting data</a></li>
-<li class="chapter" data-level="5.4" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#exercice"><i class="fa fa-check"></i><b>5.4</b> Exercice</a></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#exercise"><i class="fa fa-check"></i><b>5.4</b> Exercise</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>6</b> Descriptive statistics</a><ul>
 <li class="chapter" data-level="6.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#data-used"><i class="fa fa-check"></i><b>6.1</b> Data used</a></li>
@@ -173,7 +173,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="base-graphics.html"><a href="base-graphics.html#line-graphs"><i class="fa fa-check"></i><b>7.2</b> Line graphs</a></li>
 <li class="chapter" data-level="7.3" data-path="base-graphics.html"><a href="base-graphics.html#graphical-parameters"><i class="fa fa-check"></i><b>7.3</b> Graphical parameters</a></li>
 <li class="chapter" data-level="7.4" data-path="base-graphics.html"><a href="base-graphics.html#histograms"><i class="fa fa-check"></i><b>7.4</b> Histograms</a></li>
-<li class="chapter" data-level="7.5" data-path="base-graphics.html"><a href="base-graphics.html#exercises"><i class="fa fa-check"></i><b>7.5</b> Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#exercises"><i class="fa fa-check"></i><b>7.5</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="probability-distributions.html"><a href="probability-distributions.html"><i class="fa fa-check"></i><b>8</b> Probability distributions</a><ul>
+<li class="chapter" data-level="8.1" data-path="probability-distributions.html"><a href="probability-distributions.html#discrete-distributions-of-discrete-random-variables"><i class="fa fa-check"></i><b>8.1</b> Discrete distributions of discrete random variables</a></li>
+<li class="chapter" data-level="8.2" data-path="probability-distributions.html"><a href="probability-distributions.html#continuous-distributions"><i class="fa fa-check"></i><b>8.2</b> Continuous distributions</a></li>
+<li class="chapter" data-level="8.3" data-path="probability-distributions.html"><a href="probability-distributions.html#example-the-law-of-large-numbers"><i class="fa fa-check"></i><b>8.3</b> Example: the Law of Large Numbers</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://vittorioperduca.github.io/Introduction-to-R/" target="blank">Published with bookdown</a></li>
@@ -398,8 +403,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Any variable defined in a function is <em>local</em> and does not appear in the workspace: try to run</p>
 <div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1">z</a></code></pre></div>
 </div>
-<div id="exercices" class="section level2">
-<h2><span class="header-section-number">4.6</span> Exercices</h2>
+<div id="exercises" class="section level2">
+<h2><span class="header-section-number">4.6</span> Exercises</h2>
+<ol style="list-style-type: decimal">
+<li>Let <span class="math inline">\(x\)</span> be a vector with the elements of a sample:</li>
+</ol>
+<pre><code>##  [1] 45 63 17 32 54 57 41 29 34 37 18 39 46 43</code></pre>
+<ul>
+<li>Write a code to give
+<ul>
+<li>the third element of the sample</li>
+<li>the four elements of the sample</li>
+<li>the items strictly greater than 35.</li>
+<li>all elements except those in positions 3, 9 and 12.</li>
+</ul></li>
+<li>Replace the first element by a missing value and give the position of all elements less than 30.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Write a function <code>weighted_average</code> that takes as inputs two vectors <span class="math inline">\(x=(x_1,\ldots,x_n)\)</span> and <span class="math inline">\(w=(w_1,\ldots,w_n)\)</span> and computes the weighted mean
+<span class="math display">\[
+\frac{1}{\sum_{i=1}^n w_i}\sum_{i=1}^nw_ix_i
+\]</span></li>
+</ol>
 
 </div>
 </div>

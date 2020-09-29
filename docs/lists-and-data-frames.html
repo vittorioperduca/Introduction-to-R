@@ -148,13 +148,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#operations-on-numerical-vectors-and-matrices"><i class="fa fa-check"></i><b>4.3</b> Operations on numerical vectors and matrices</a></li>
 <li class="chapter" data-level="4.4" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#factors"><i class="fa fa-check"></i><b>4.4</b> Factors</a></li>
 <li class="chapter" data-level="4.5" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#user-defined-functions"><i class="fa fa-check"></i><b>4.5</b> User-defined functions</a></li>
-<li class="chapter" data-level="4.6" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#exercices"><i class="fa fa-check"></i><b>4.6</b> Exercices</a></li>
+<li class="chapter" data-level="4.6" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#exercises"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html"><i class="fa fa-check"></i><b>5</b> Lists and data frames</a><ul>
 <li class="chapter" data-level="5.1" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#lists"><i class="fa fa-check"></i><b>5.1</b> Lists</a></li>
 <li class="chapter" data-level="5.2" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#data-frames"><i class="fa fa-check"></i><b>5.2</b> Data frames</a></li>
 <li class="chapter" data-level="5.3" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>5.3</b> Importing and exporting data</a></li>
-<li class="chapter" data-level="5.4" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#exercice"><i class="fa fa-check"></i><b>5.4</b> Exercice</a></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#exercise"><i class="fa fa-check"></i><b>5.4</b> Exercise</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>6</b> Descriptive statistics</a><ul>
 <li class="chapter" data-level="6.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#data-used"><i class="fa fa-check"></i><b>6.1</b> Data used</a></li>
@@ -173,7 +173,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="base-graphics.html"><a href="base-graphics.html#line-graphs"><i class="fa fa-check"></i><b>7.2</b> Line graphs</a></li>
 <li class="chapter" data-level="7.3" data-path="base-graphics.html"><a href="base-graphics.html#graphical-parameters"><i class="fa fa-check"></i><b>7.3</b> Graphical parameters</a></li>
 <li class="chapter" data-level="7.4" data-path="base-graphics.html"><a href="base-graphics.html#histograms"><i class="fa fa-check"></i><b>7.4</b> Histograms</a></li>
-<li class="chapter" data-level="7.5" data-path="base-graphics.html"><a href="base-graphics.html#exercises"><i class="fa fa-check"></i><b>7.5</b> Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#exercises"><i class="fa fa-check"></i><b>7.5</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="probability-distributions.html"><a href="probability-distributions.html"><i class="fa fa-check"></i><b>8</b> Probability distributions</a><ul>
+<li class="chapter" data-level="8.1" data-path="probability-distributions.html"><a href="probability-distributions.html#discrete-distributions-of-discrete-random-variables"><i class="fa fa-check"></i><b>8.1</b> Discrete distributions of discrete random variables</a></li>
+<li class="chapter" data-level="8.2" data-path="probability-distributions.html"><a href="probability-distributions.html#continuous-distributions"><i class="fa fa-check"></i><b>8.2</b> Continuous distributions</a></li>
+<li class="chapter" data-level="8.3" data-path="probability-distributions.html"><a href="probability-distributions.html#example-the-law-of-large-numbers"><i class="fa fa-check"></i><b>8.3</b> Example: the Law of Large Numbers</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://vittorioperduca.github.io/Introduction-to-R/" target="blank">Published with bookdown</a></li>
@@ -200,24 +205,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="lists" class="section level2">
 <h2><span class="header-section-number">5.1</span> Lists</h2>
 <p>Lists are special vectors that can store elements of any mode (including other lists).</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1">age =<span class="st"> </span><span class="kw">c</span>(<span class="dv">33</span>,<span class="dv">28</span>, <span class="dv">33</span>)</a>
-<a class="sourceLine" id="cb171-2" data-line-number="2">names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Daniel&#39;</span>, <span class="st">&#39;Jehanne&#39;</span>, <span class="st">&#39;Romain&#39;</span>)</a>
-<a class="sourceLine" id="cb171-3" data-line-number="3">my.list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">Names =</span> names, <span class="dt">Age =</span> age)</a></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1">age =<span class="st"> </span><span class="kw">c</span>(<span class="dv">33</span>,<span class="dv">28</span>, <span class="dv">33</span>)</a>
+<a class="sourceLine" id="cb172-2" data-line-number="2">names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Daniel&#39;</span>, <span class="st">&#39;Jehanne&#39;</span>, <span class="st">&#39;Romain&#39;</span>)</a>
+<a class="sourceLine" id="cb172-3" data-line-number="3">my.list &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">Names =</span> names, <span class="dt">Age =</span> age)</a></code></pre></div>
 <p>Like any other vector, a list is indexed by the <code>[...]</code> operator, however, note that the result will be a list containing as unique element the desired item:</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1">my.list[<span class="dv">1</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1">my.list[<span class="dv">1</span>]</a></code></pre></div>
 <pre><code>## $Names
 ## [1] &quot;Daniel&quot;  &quot;Jehanne&quot; &quot;Romain&quot;</code></pre>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1"><span class="kw">mode</span>(my.list[<span class="dv">1</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" data-line-number="1"><span class="kw">mode</span>(my.list[<span class="dv">1</span>])</a></code></pre></div>
 <pre><code>## [1] &quot;list&quot;</code></pre>
 <p>To get the desired item directly, we therefore use the <code>[[...]]</code> operator or the <code>$</code> operator followed by the name of the element (if available):</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1">my.list[[<span class="dv">1</span>]]</a></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" data-line-number="1">my.list[[<span class="dv">1</span>]]</a></code></pre></div>
 <pre><code>## [1] &quot;Daniel&quot;  &quot;Jehanne&quot; &quot;Romain&quot;</code></pre>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1">my.list<span class="op">$</span>age</a></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" data-line-number="1">my.list<span class="op">$</span>age</a></code></pre></div>
 <pre><code>## NULL</code></pre>
 <p>The elements of a list can have different lengths:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1">city &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;paris&#39;</span>, <span class="st">&#39;lyon&#39;</span>, <span class="st">&#39;lyon&#39;</span>, <span class="st">&#39;paris&#39;</span>, <span class="st">&#39;nantes&#39;</span>)</a>
-<a class="sourceLine" id="cb180-2" data-line-number="2">my.list<span class="op">$</span>city &lt;-<span class="st"> </span>city</a>
-<a class="sourceLine" id="cb180-3" data-line-number="3">my.list</a></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" data-line-number="1">city &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;paris&#39;</span>, <span class="st">&#39;lyon&#39;</span>, <span class="st">&#39;lyon&#39;</span>, <span class="st">&#39;paris&#39;</span>, <span class="st">&#39;nantes&#39;</span>)</a>
+<a class="sourceLine" id="cb181-2" data-line-number="2">my.list<span class="op">$</span>city &lt;-<span class="st"> </span>city</a>
+<a class="sourceLine" id="cb181-3" data-line-number="3">my.list</a></code></pre></div>
 <pre><code>## $Names
 ## [1] &quot;Daniel&quot;  &quot;Jehanne&quot; &quot;Romain&quot; 
 ## 
@@ -230,11 +235,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-frames" class="section level2">
 <h2><span class="header-section-number">5.2</span> Data frames</h2>
 <p>The most widely data containers is the data frame, a special list of class <code>data.frame</code> in which all elements have the same length. For this reason, a data frame is represented in the form of a two-dimensional array whose columns are its elements. Typically, in a data frame the columns represent the <strong>variables</strong> and the rows the <strong>observations</strong>. Unlike matrices, the elements of a data frame can have different modes.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" data-line-number="1">id &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;id.453&#39;</span>, <span class="st">&#39;id.452&#39;</span>, <span class="st">&#39;id.455&#39;</span>, <span class="st">&#39;id.459&#39;</span>, <span class="st">&#39;id.458&#39;</span>, <span class="st">&#39;id.456&#39;</span>, <span class="st">&#39;id.450&#39;</span>, <span class="st">&#39;id. 451&#39;</span>)</a>
-<a class="sourceLine" id="cb182-2" data-line-number="2">age &lt;-<span class="st"> </span><span class="kw">c</span> (<span class="dv">19</span>, <span class="dv">45</span>, <span class="dv">67</span>, <span class="dv">53</span>, <span class="dv">17</span>, <span class="dv">30</span>, <span class="dv">27</span>, <span class="dv">35</span>)</a>
-<a class="sourceLine" id="cb182-3" data-line-number="3">smoker &lt;-<span class="st"> </span><span class="kw">c</span> (<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb182-4" data-line-number="4">sex &lt;-<span class="st"> </span><span class="kw">c</span> (<span class="st">&#39;f&#39;</span>, <span class="st">&#39;f&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;f&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;f&#39;</span>, <span class="st">&#39;f&#39;</span>)</a>
-<a class="sourceLine" id="cb182-5" data-line-number="5">my.db &lt;-<span class="st"> </span><span class="kw">data.frame</span> (<span class="dt">Id =</span> id, <span class="dt">Age =</span> age, <span class="dt">Smoker =</span> smoker, <span class="dt">Sex =</span> sex); my.db</a></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" data-line-number="1">id &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;id.453&#39;</span>, <span class="st">&#39;id.452&#39;</span>, <span class="st">&#39;id.455&#39;</span>, <span class="st">&#39;id.459&#39;</span>, <span class="st">&#39;id.458&#39;</span>, <span class="st">&#39;id.456&#39;</span>, <span class="st">&#39;id.450&#39;</span>, <span class="st">&#39;id. 451&#39;</span>)</a>
+<a class="sourceLine" id="cb183-2" data-line-number="2">age &lt;-<span class="st"> </span><span class="kw">c</span> (<span class="dv">19</span>, <span class="dv">45</span>, <span class="dv">67</span>, <span class="dv">53</span>, <span class="dv">17</span>, <span class="dv">30</span>, <span class="dv">27</span>, <span class="dv">35</span>)</a>
+<a class="sourceLine" id="cb183-3" data-line-number="3">smoker &lt;-<span class="st"> </span><span class="kw">c</span> (<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb183-4" data-line-number="4">sex &lt;-<span class="st"> </span><span class="kw">c</span> (<span class="st">&#39;f&#39;</span>, <span class="st">&#39;f&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;f&#39;</span>, <span class="st">&#39;h&#39;</span>, <span class="st">&#39;f&#39;</span>, <span class="st">&#39;f&#39;</span>)</a>
+<a class="sourceLine" id="cb183-5" data-line-number="5">my.db &lt;-<span class="st"> </span><span class="kw">data.frame</span> (<span class="dt">Id =</span> id, <span class="dt">Age =</span> age, <span class="dt">Smoker =</span> smoker, <span class="dt">Sex =</span> sex); my.db</a></code></pre></div>
 <pre><code>##        Id Age Smoker Sex
 ## 1  id.453  19   TRUE   f
 ## 2  id.452  45  FALSE   f
@@ -244,26 +249,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 6  id.456  30   TRUE   h
 ## 7  id.450  27   TRUE   f
 ## 8 id. 451  35   TRUE   f</code></pre>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" data-line-number="1"><span class="kw">dim</span>(my.db); <span class="kw">nrow</span>(my.db); <span class="kw">ncol</span>(my.db)</a></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" data-line-number="1"><span class="kw">dim</span>(my.db); <span class="kw">nrow</span>(my.db); <span class="kw">ncol</span>(my.db)</a></code></pre></div>
 <pre><code>## [1] 8 4</code></pre>
 <pre><code>## [1] 8</code></pre>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" data-line-number="1"><span class="kw">names</span>(my.db)</a></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb189-1" data-line-number="1"><span class="kw">names</span>(my.db)</a></code></pre></div>
 <pre><code>## [1] &quot;Id&quot;     &quot;Age&quot;    &quot;Smoker&quot; &quot;Sex&quot;</code></pre>
 <p>A data frame being a list, we can extract a column using the <code>$</code> operator preceded by the name of the data frame and followed by the name of the column (or variable), or use the operator <code>[...]</code></p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" data-line-number="1">my.db<span class="op">$</span>Sex <span class="co"># a column of characters is automatically transformed into a factor</span></a></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" data-line-number="1">my.db<span class="op">$</span>Sex <span class="co"># a column of characters is automatically transformed into a factor</span></a></code></pre></div>
 <pre><code>## [1] f f h h f h f f
 ## Levels: f h</code></pre>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" data-line-number="1">my.db[, <span class="dv">2</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" data-line-number="1">my.db[, <span class="dv">2</span>]</a></code></pre></div>
 <pre><code>## [1] 19 45 67 53 17 30 27 35</code></pre>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" data-line-number="1">my.db<span class="op">$</span>Age[my.db<span class="op">$</span>Smoker <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>] <span class="co"># simple example of selection</span></a></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" data-line-number="1">my.db<span class="op">$</span>Age[my.db<span class="op">$</span>Smoker <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>] <span class="co"># simple example of selection</span></a></code></pre></div>
 <pre><code>## [1] 45 17</code></pre>
 <p>The columns are directly accessible in the workspace (without having to type the name of the data frame and the <code>$</code>) after having <em>attached</em> the data frame:</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" data-line-number="1"><span class="kw">attach</span>(my.db)</a>
-<a class="sourceLine" id="cb196-2" data-line-number="2">Age</a></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" data-line-number="1"><span class="kw">attach</span>(my.db)</a>
+<a class="sourceLine" id="cb197-2" data-line-number="2">Age</a></code></pre></div>
 <pre><code>## [1] 19 45 67 53 17 30 27 35</code></pre>
 <p>To display only the first six lines:</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" data-line-number="1"><span class="kw">head</span>(my.db)</a></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" data-line-number="1"><span class="kw">head</span>(my.db)</a></code></pre></div>
 <pre><code>##       Id Age Smoker Sex
 ## 1 id.453  19   TRUE   f
 ## 2 id.452  45  FALSE   f
@@ -282,14 +287,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>sep</code>: character separating the columns</li>
 </ul>
 <p><code>read.table()</code> returns a data frame:</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" data-line-number="1">url1 &lt;-<span class="st"> &#39;https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/iris.txt&#39;</span></a>
-<a class="sourceLine" id="cb200-2" data-line-number="2">d1 &lt;-<span class="st"> </span><span class="kw">read.table</span>(url1,</a>
-<a class="sourceLine" id="cb200-3" data-line-number="3">                 <span class="co"># the first line contains the name of the variables</span></a>
-<a class="sourceLine" id="cb200-4" data-line-number="4">                 <span class="dt">header =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb200-5" data-line-number="5">                 <span class="co"># values are separated by ;</span></a>
-<a class="sourceLine" id="cb200-6" data-line-number="6">                 <span class="dt">sep =</span> <span class="st">&#39;;&#39;</span>) </a>
-<a class="sourceLine" id="cb200-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb200-8" data-line-number="8"><span class="kw">head</span> (d1)</a></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" data-line-number="1">url1 &lt;-<span class="st"> &#39;https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/iris.txt&#39;</span></a>
+<a class="sourceLine" id="cb201-2" data-line-number="2">d1 &lt;-<span class="st"> </span><span class="kw">read.table</span>(url1,</a>
+<a class="sourceLine" id="cb201-3" data-line-number="3">                 <span class="co"># the first line contains the name of the variables</span></a>
+<a class="sourceLine" id="cb201-4" data-line-number="4">                 <span class="dt">header =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb201-5" data-line-number="5">                 <span class="co"># values are separated by ;</span></a>
+<a class="sourceLine" id="cb201-6" data-line-number="6">                 <span class="dt">sep =</span> <span class="st">&#39;;&#39;</span>) </a>
+<a class="sourceLine" id="cb201-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb201-8" data-line-number="8"><span class="kw">head</span> (d1)</a></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
 ## 2          4.9         3.0          1.4         0.2  setosa
@@ -297,19 +302,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4          4.6         3.1          1.5         0.2  setosa
 ## 5          5.0         3.6          1.4         0.2  setosa
 ## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" data-line-number="1">url2 &lt;-<span class="st"> &#39;https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/heart.txt&#39;</span></a>
-<a class="sourceLine" id="cb202-2" data-line-number="2">d2 &lt;-<span class="st"> </span><span class="kw">read.table</span>(url2,</a>
-<a class="sourceLine" id="cb202-3" data-line-number="3">                 <span class="dt">header =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb202-4" data-line-number="4">                 <span class="co"># variables are separated by a tabulation</span></a>
-<a class="sourceLine" id="cb202-5" data-line-number="5">                 <span class="dt">sep =</span> <span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>) </a>
-<a class="sourceLine" id="cb202-6" data-line-number="6"><span class="kw">dim</span>(d2); <span class="kw">names</span>(d2)</a></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" data-line-number="1">url2 &lt;-<span class="st"> &#39;https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/heart.txt&#39;</span></a>
+<a class="sourceLine" id="cb203-2" data-line-number="2">d2 &lt;-<span class="st"> </span><span class="kw">read.table</span>(url2,</a>
+<a class="sourceLine" id="cb203-3" data-line-number="3">                 <span class="dt">header =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb203-4" data-line-number="4">                 <span class="co"># variables are separated by a tabulation</span></a>
+<a class="sourceLine" id="cb203-5" data-line-number="5">                 <span class="dt">sep =</span> <span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>) </a>
+<a class="sourceLine" id="cb203-6" data-line-number="6"><span class="kw">dim</span>(d2); <span class="kw">names</span>(d2)</a></code></pre></div>
 <pre><code>## [1] 270  13</code></pre>
 <pre><code>##  [1] &quot;age&quot;          &quot;sexe&quot;         &quot;type_douleur&quot; &quot;pression&quot;     &quot;cholester&quot;   
 ##  [6] &quot;sucre&quot;        &quot;electro&quot;      &quot;taux_max&quot;     &quot;angine&quot;       &quot;depression&quot;  
 ## [11] &quot;pic&quot;          &quot;vaisseau&quot;     &quot;coeur&quot;</code></pre>
 <p>For data stored in the <code>.Rda</code> or <code>.Rdata</code> format, the import is done with <code>load()</code> with the argument <code>file = filename</code>. For instance download the <code>Iris.Rda</code> file at <a href="https://github.com/vittorioperduca/Introduction-to-R/blob/master/data/Iris.Rda">github.com/vittorioperduca/Introduction-to-R/blob/master/data/Iris.Rda</a> to your working directory and then try the following:</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" data-line-number="1">iris_path &lt;-<span class="st"> &#39;data/Iris.Rda&#39;</span> <span class="co"># replace with the file path</span></a>
-<a class="sourceLine" id="cb205-2" data-line-number="2"><span class="kw">load</span>(iris_path)</a></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" data-line-number="1">iris_path &lt;-<span class="st"> &#39;data/Iris.Rda&#39;</span> <span class="co"># replace with the file path</span></a>
+<a class="sourceLine" id="cb206-2" data-line-number="2"><span class="kw">load</span>(iris_path)</a></code></pre></div>
 <p>If you want to load <code>.Rda</code> or <code>.Rdata</code> files directly from an url, don’t forget to use the <code>url()</code> function (this was not necessary in <code>read.table()</code>).</p>
 <p>Data can be exported either to a text file (or .csv, Excel …) using <code>write.file()</code> or to <code>.rda</code> and <code>.Rdata</code> files at using <code>save()</code>. In both cases, the two main arguments are</p>
 <ul>
@@ -317,12 +322,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>file =</code> the name of the file (in quotes).</li>
 </ul>
 <p>If the dataset is stored (or must be saved up) locally, it is necessary to know (and be able to modify) the working directory:</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" data-line-number="1"><span class="co"># getwd() # try on your machine!</span></a>
-<a class="sourceLine" id="cb206-2" data-line-number="2"><span class="co"># setwd(&#39;~/Documents&#39;) # to move to the Documents directory</span></a></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" data-line-number="1"><span class="co"># getwd() # try on your machine!</span></a>
+<a class="sourceLine" id="cb207-2" data-line-number="2"><span class="co"># setwd(&#39;~/Documents&#39;) # to move to the Documents directory</span></a></code></pre></div>
 <p>Remember that in Linux and macOS machines, <code>~/</code> is a shortcut for <code>/Users/username</code>. For Windows machines, the address syntax is slightly different. For example we use <code>\</code> instead of <code>/</code>.</p>
 </div>
-<div id="exercice" class="section level2">
-<h2><span class="header-section-number">5.4</span> Exercice</h2>
+<div id="exercise" class="section level2">
+<h2><span class="header-section-number">5.4</span> Exercise</h2>
 <p>Download the text file <a href="https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/hepatitis.txt">raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/hepatitis.txt</a> to your working directory.</p>
 <ol style="list-style-type: decimal">
 <li>Import the dataset in <code>R</code>. Warning: missing data were coded with a <code>?</code>, read the documentation of <code>read.table ()</code>.</li>

@@ -148,13 +148,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#operations-on-numerical-vectors-and-matrices"><i class="fa fa-check"></i><b>4.3</b> Operations on numerical vectors and matrices</a></li>
 <li class="chapter" data-level="4.4" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#factors"><i class="fa fa-check"></i><b>4.4</b> Factors</a></li>
 <li class="chapter" data-level="4.5" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#user-defined-functions"><i class="fa fa-check"></i><b>4.5</b> User-defined functions</a></li>
-<li class="chapter" data-level="4.6" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#exercices"><i class="fa fa-check"></i><b>4.6</b> Exercices</a></li>
+<li class="chapter" data-level="4.6" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#exercises"><i class="fa fa-check"></i><b>4.6</b> Exercises</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html"><i class="fa fa-check"></i><b>5</b> Lists and data frames</a><ul>
 <li class="chapter" data-level="5.1" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#lists"><i class="fa fa-check"></i><b>5.1</b> Lists</a></li>
 <li class="chapter" data-level="5.2" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#data-frames"><i class="fa fa-check"></i><b>5.2</b> Data frames</a></li>
 <li class="chapter" data-level="5.3" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>5.3</b> Importing and exporting data</a></li>
-<li class="chapter" data-level="5.4" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#exercice"><i class="fa fa-check"></i><b>5.4</b> Exercice</a></li>
+<li class="chapter" data-level="5.4" data-path="lists-and-data-frames.html"><a href="lists-and-data-frames.html#exercise"><i class="fa fa-check"></i><b>5.4</b> Exercise</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>6</b> Descriptive statistics</a><ul>
 <li class="chapter" data-level="6.1" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html#data-used"><i class="fa fa-check"></i><b>6.1</b> Data used</a></li>
@@ -173,7 +173,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2" data-path="base-graphics.html"><a href="base-graphics.html#line-graphs"><i class="fa fa-check"></i><b>7.2</b> Line graphs</a></li>
 <li class="chapter" data-level="7.3" data-path="base-graphics.html"><a href="base-graphics.html#graphical-parameters"><i class="fa fa-check"></i><b>7.3</b> Graphical parameters</a></li>
 <li class="chapter" data-level="7.4" data-path="base-graphics.html"><a href="base-graphics.html#histograms"><i class="fa fa-check"></i><b>7.4</b> Histograms</a></li>
-<li class="chapter" data-level="7.5" data-path="base-graphics.html"><a href="base-graphics.html#exercises"><i class="fa fa-check"></i><b>7.5</b> Exercises</a></li>
+<li class="chapter" data-level="7.5" data-path="vectors-matrices-and-functions.html"><a href="vectors-matrices-and-functions.html#exercises"><i class="fa fa-check"></i><b>7.5</b> Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="probability-distributions.html"><a href="probability-distributions.html"><i class="fa fa-check"></i><b>8</b> Probability distributions</a><ul>
+<li class="chapter" data-level="8.1" data-path="probability-distributions.html"><a href="probability-distributions.html#discrete-distributions-of-discrete-random-variables"><i class="fa fa-check"></i><b>8.1</b> Discrete distributions of discrete random variables</a></li>
+<li class="chapter" data-level="8.2" data-path="probability-distributions.html"><a href="probability-distributions.html#continuous-distributions"><i class="fa fa-check"></i><b>8.2</b> Continuous distributions</a></li>
+<li class="chapter" data-level="8.3" data-path="probability-distributions.html"><a href="probability-distributions.html#example-the-law-of-large-numbers"><i class="fa fa-check"></i><b>8.3</b> Example: the Law of Large Numbers</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://vittorioperduca.github.io/Introduction-to-R/" target="blank">Published with bookdown</a></li>
@@ -200,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-used" class="section level2">
 <h2><span class="header-section-number">6.1</span> Data used</h2>
 <p>Basic functions for graphics and descriptive statistics will be illustrated using the <code>mtcars</code> dataset available in <code>R</code>. For a description of this dataset, see the help: <code>?mtcars</code>. We can also get an idea of the class and content of <code>mtcars</code> with <code>str()</code>:</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" data-line-number="1"><span class="kw">str</span>(mtcars)</a></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" data-line-number="1"><span class="kw">str</span>(mtcars)</a></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:	32 obs. of  11 variables:
 ##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
 ##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
@@ -214,8 +219,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
 ##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...</code></pre>
 <p>The variable <code>cyl</code> represents the number of cylinders with three possible modalities (4, 6 or 8), so it is natural to convert it into a factor:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" data-line-number="1">mtcars<span class="op">$</span>cyl.factor &lt;-<span class="st"> </span><span class="kw">as.factor</span> (mtcars <span class="op">$</span><span class="st"> </span>cyl)</a>
-<a class="sourceLine" id="cb209-2" data-line-number="2"><span class="kw">attach</span> (mtcars)</a></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" data-line-number="1">mtcars<span class="op">$</span>cyl.factor &lt;-<span class="st"> </span><span class="kw">as.factor</span> (mtcars <span class="op">$</span><span class="st"> </span>cyl)</a>
+<a class="sourceLine" id="cb210-2" data-line-number="2"><span class="kw">attach</span> (mtcars)</a></code></pre></div>
 </div>
 <div id="univariate-analysis" class="section level2">
 <h2><span class="header-section-number">6.2</span> Univariate analysis</h2>
@@ -223,24 +228,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.2.1</span> Quantitative variables</h3>
 <p>For a quantitative variable, the basic statistics that can be calculated are the minimum, the maximum, the mean, the variance and the standard deviation, the median and the other quantiles (remember that the quantile of order <span class="math inline">\(p\)</span> is the value <span class="math inline">\(q\)</span> such that <span class="math inline">\(p\)</span> is the proportion of observed values less than <span class="math inline">\(q\)</span>).</p>
 <p>Try the following commands</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" data-line-number="1"><span class="kw">min</span>(mpg)</a>
-<a class="sourceLine" id="cb210-2" data-line-number="2"><span class="kw">max</span>(mpg)</a>
-<a class="sourceLine" id="cb210-3" data-line-number="3"><span class="kw">range</span>(mpg)</a>
-<a class="sourceLine" id="cb210-4" data-line-number="4"><span class="kw">mean</span>(mpg)</a>
-<a class="sourceLine" id="cb210-5" data-line-number="5"><span class="kw">var</span>(mpg)</a>
-<a class="sourceLine" id="cb210-6" data-line-number="6"><span class="kw">sd</span>(mpg)</a>
-<a class="sourceLine" id="cb210-7" data-line-number="7"><span class="kw">median</span>(mpg)</a>
-<a class="sourceLine" id="cb210-8" data-line-number="8"><span class="kw">quantile</span>(mpg)</a>
-<a class="sourceLine" id="cb210-9" data-line-number="9"><span class="kw">quantile</span>(mpg, <span class="dt">probs =</span> <span class="fl">0.99</span>) <span class="co"># for the 99th percentile</span></a>
-<a class="sourceLine" id="cb210-10" data-line-number="10"><span class="kw">quantile</span>(mpg, <span class="dt">probs =</span> <span class="kw">c</span>(<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="fl">0.99</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" data-line-number="1"><span class="kw">min</span>(mpg)</a>
+<a class="sourceLine" id="cb211-2" data-line-number="2"><span class="kw">max</span>(mpg)</a>
+<a class="sourceLine" id="cb211-3" data-line-number="3"><span class="kw">range</span>(mpg)</a>
+<a class="sourceLine" id="cb211-4" data-line-number="4"><span class="kw">mean</span>(mpg)</a>
+<a class="sourceLine" id="cb211-5" data-line-number="5"><span class="kw">var</span>(mpg)</a>
+<a class="sourceLine" id="cb211-6" data-line-number="6"><span class="kw">sd</span>(mpg)</a>
+<a class="sourceLine" id="cb211-7" data-line-number="7"><span class="kw">median</span>(mpg)</a>
+<a class="sourceLine" id="cb211-8" data-line-number="8"><span class="kw">quantile</span>(mpg)</a>
+<a class="sourceLine" id="cb211-9" data-line-number="9"><span class="kw">quantile</span>(mpg, <span class="dt">probs =</span> <span class="fl">0.99</span>) <span class="co"># for the 99th percentile</span></a>
+<a class="sourceLine" id="cb211-10" data-line-number="10"><span class="kw">quantile</span>(mpg, <span class="dt">probs =</span> <span class="kw">c</span>(<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">0.9</span>, <span class="fl">0.99</span>))</a></code></pre></div>
 <p>If the input vector contains missing data, we can exclude them from the statistic calculation using the option <code>na.rm = TRUE</code>.</p>
 <p>The generic <code>summary()</code> function allows to quickly describe the distribution of a sample:</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" data-line-number="1"><span class="kw">summary</span>(mpg)</a></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" data-line-number="1"><span class="kw">summary</span>(mpg)</a></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   10.40   15.43   19.20   20.09   22.80   33.90</code></pre>
 <p>An useful tool to show a sample distribution is the <em>boxplot</em>:</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb213-1" data-line-number="1"><span class="kw">boxplot</span>(mpg)</a></code></pre></div>
-<p><img src="Introduction-R_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" data-line-number="1"><span class="kw">boxplot</span>(mpg)</a></code></pre></div>
+<p><img src="Introduction-R_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <p>We recall that in a boxplot:</p>
 <ul>
 <li>The height (or length if we choose the option <code>horizontal = TRUE</code>) of the box is defined by the first and third quartiles <span class="math inline">\(q_1\)</span> and <span class="math inline">\(q_3\)</span>.</li>
@@ -249,79 +254,79 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Similarly, the whisker at the top starts from <span class="math inline">\(q_3\)</span> and goes up to the maximum of the sample if there are no extreme points on the right, ie values greater than <span class="math inline">\(q_3+1.5 \times(q_3-q_1)\)</span>. If there are extreme points on the right, the whisker stops at the greatest point less than the threshold <span class="math inline">\(q_3+1.5\times (q_3-q_1)\)</span>, and we place the extreme points above of it.</li>
 </ul>
 <p>Try the following:</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" data-line-number="1">u &lt;-<span class="st"> </span><span class="kw">c</span>(mpg, <span class="fl">3.5</span>, <span class="fl">2.7</span>) <span class="co"># adding two very low values</span></a>
-<a class="sourceLine" id="cb214-2" data-line-number="2"><span class="kw">boxplot</span>(u)</a>
-<a class="sourceLine" id="cb214-3" data-line-number="3">q1 &lt;-<span class="st"> </span><span class="kw">quantile</span>(u, <span class="fl">.25</span>); q3 &lt;-<span class="st"> </span><span class="kw">quantile</span>(u, <span class="fl">.75</span>)</a>
-<a class="sourceLine" id="cb214-4" data-line-number="4"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">median</span>(u), <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb214-5" data-line-number="5"><span class="kw">abline</span>(<span class="dt">h =</span> q1, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>); <span class="kw">abline</span>(<span class="dt">h =</span> q3, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb214-6" data-line-number="6"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">max</span>(u), <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb214-7" data-line-number="7"><span class="co"># u[u &lt; q1-1.5*(q3-q1)] # extreme points on the left</span></a>
-<a class="sourceLine" id="cb214-8" data-line-number="8"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">min</span>(u[u <span class="op">&gt;=</span><span class="st"> </span>q1<span class="fl">-1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1)]), <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb214-9" data-line-number="9"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">min</span>(u), <span class="dt">col =</span> <span class="dv">4</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a></code></pre></div>
-<p><img src="Introduction-R_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
-<p>The other graphical tool to represent the distribution of a quantitative variable is the histogram:</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" data-line-number="1"><span class="kw">hist</span>(mpg)</a></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" data-line-number="1">u &lt;-<span class="st"> </span><span class="kw">c</span>(mpg, <span class="fl">3.5</span>, <span class="fl">2.7</span>) <span class="co"># adding two very low values</span></a>
+<a class="sourceLine" id="cb215-2" data-line-number="2"><span class="kw">boxplot</span>(u)</a>
+<a class="sourceLine" id="cb215-3" data-line-number="3">q1 &lt;-<span class="st"> </span><span class="kw">quantile</span>(u, <span class="fl">.25</span>); q3 &lt;-<span class="st"> </span><span class="kw">quantile</span>(u, <span class="fl">.75</span>)</a>
+<a class="sourceLine" id="cb215-4" data-line-number="4"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">median</span>(u), <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb215-5" data-line-number="5"><span class="kw">abline</span>(<span class="dt">h =</span> q1, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>); <span class="kw">abline</span>(<span class="dt">h =</span> q3, <span class="dt">col =</span> <span class="dv">2</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb215-6" data-line-number="6"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">max</span>(u), <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb215-7" data-line-number="7"><span class="co"># u[u &lt; q1-1.5*(q3-q1)] # extreme points on the left</span></a>
+<a class="sourceLine" id="cb215-8" data-line-number="8"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">min</span>(u[u <span class="op">&gt;=</span><span class="st"> </span>q1<span class="fl">-1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1)]), <span class="dt">col =</span> <span class="dv">3</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb215-9" data-line-number="9"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">min</span>(u), <span class="dt">col =</span> <span class="dv">4</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a></code></pre></div>
 <p><img src="Introduction-R_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" data-line-number="1"><span class="co"># Try the following:</span></a>
-<a class="sourceLine" id="cb216-2" data-line-number="2"><span class="co"># hist (mtcars$mpg, breaks = 20) # if we want 20 + 1 intervals</span></a>
-<a class="sourceLine" id="cb216-3" data-line-number="3"><span class="co"># we specify by hand the points which define the intervals:</span></a>
-<a class="sourceLine" id="cb216-4" data-line-number="4"><span class="co"># hist (mtcars$mpg, breaks = c (10, 15, 18, 20, 22, 25, 35))</span></a></code></pre></div>
-<p>By default the vertical axis gives the number of observations in each interval. If we want to plot the histogram in the <em>density</em> scale, we have to use the option <code>freq = FALSE</code>. In this case we recall that the proportion of observations in each interval is given by the area of the corresponding rectangle:</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb217-1" data-line-number="1"><span class="kw">hist</span>(mpg, <span class="dt">freq =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb217-2" data-line-number="2"><span class="co"># relative frequency of observations in the [10,15] range:</span></a>
-<a class="sourceLine" id="cb217-3" data-line-number="3"><span class="co"># the area of the first rectangle is</span></a>
-<a class="sourceLine" id="cb217-4" data-line-number="4"><span class="co"># mean(10 &lt;= mpg &amp; mpg &lt;= 15)</span></a>
-<a class="sourceLine" id="cb217-5" data-line-number="5"><span class="co"># to verify this, we divide the area by the base length and show</span></a>
-<a class="sourceLine" id="cb217-6" data-line-number="6"><span class="co"># that this is precisely the height of the rectangle:</span></a>
-<a class="sourceLine" id="cb217-7" data-line-number="7"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">mean</span>(<span class="dv">10</span> <span class="op">&lt;=</span><span class="st"> </span>mpg <span class="op">&amp;</span><span class="st"> </span>mpg <span class="op">&lt;=</span><span class="st"> </span><span class="dv">15</span>)<span class="op">/</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="dv">2</span>)</a></code></pre></div>
+<p>The other graphical tool to represent the distribution of a quantitative variable is the histogram:</p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" data-line-number="1"><span class="kw">hist</span>(mpg)</a></code></pre></div>
 <p><img src="Introduction-R_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
-<p>We can also compare the distribution of the sample with the theoretical distribution of the standard normal distribution through a <em>QQ-plot</em>. This plot compare the empircal quantiles of the sample with the theoretical quantiles of the standard normal, if the observations in the sample were normally distributed than the points in the QQ-plot should be aligned along the bisector:</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" data-line-number="1"><span class="kw">qqnorm</span>(mpg)</a>
-<a class="sourceLine" id="cb218-2" data-line-number="2"><span class="kw">qqline</span>(mpg) <span class="co"># the line sample quantiles = theoretical quantiles</span></a></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb217-1" data-line-number="1"><span class="co"># Try the following:</span></a>
+<a class="sourceLine" id="cb217-2" data-line-number="2"><span class="co"># hist (mtcars$mpg, breaks = 20) # if we want 20 + 1 intervals</span></a>
+<a class="sourceLine" id="cb217-3" data-line-number="3"><span class="co"># we specify by hand the points which define the intervals:</span></a>
+<a class="sourceLine" id="cb217-4" data-line-number="4"><span class="co"># hist (mtcars$mpg, breaks = c (10, 15, 18, 20, 22, 25, 35))</span></a></code></pre></div>
+<p>By default the vertical axis gives the number of observations in each interval. If we want to plot the histogram in the <em>density</em> scale, we have to use the option <code>freq = FALSE</code>. In this case we recall that the proportion of observations in each interval is given by the area of the corresponding rectangle:</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" data-line-number="1"><span class="kw">hist</span>(mpg, <span class="dt">freq =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb218-2" data-line-number="2"><span class="co"># relative frequency of observations in the [10,15] range:</span></a>
+<a class="sourceLine" id="cb218-3" data-line-number="3"><span class="co"># the area of the first rectangle is</span></a>
+<a class="sourceLine" id="cb218-4" data-line-number="4"><span class="co"># mean(10 &lt;= mpg &amp; mpg &lt;= 15)</span></a>
+<a class="sourceLine" id="cb218-5" data-line-number="5"><span class="co"># to verify this, we divide the area by the base length and show</span></a>
+<a class="sourceLine" id="cb218-6" data-line-number="6"><span class="co"># that this is precisely the height of the rectangle:</span></a>
+<a class="sourceLine" id="cb218-7" data-line-number="7"><span class="kw">abline</span>(<span class="dt">h =</span> <span class="kw">mean</span>(<span class="dv">10</span> <span class="op">&lt;=</span><span class="st"> </span>mpg <span class="op">&amp;</span><span class="st"> </span>mpg <span class="op">&lt;=</span><span class="st"> </span><span class="dv">15</span>)<span class="op">/</span><span class="dv">5</span>, <span class="dt">col =</span> <span class="dv">2</span>)</a></code></pre></div>
 <p><img src="Introduction-R_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p>We can also compare the distribution of the sample with the theoretical distribution of the standard normal distribution through a <em>QQ-plot</em>. This plot compare the empircal quantiles of the sample with the theoretical quantiles of the standard normal, if the observations in the sample were normally distributed than the points in the QQ-plot should be aligned along the bisector:</p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb219-1" data-line-number="1"><span class="kw">qqnorm</span>(mpg)</a>
+<a class="sourceLine" id="cb219-2" data-line-number="2"><span class="kw">qqline</span>(mpg) <span class="co"># the line sample quantiles = theoretical quantiles</span></a></code></pre></div>
+<p><img src="Introduction-R_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 <p><strong>Remark.</strong> Compare the previous QQ-plot to that of the <em>standardized</em> sample:</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb219-1" data-line-number="1">mpg.stand &lt;-<span class="st"> </span>(mpg<span class="op">-</span><span class="kw">mean</span>(mpg))<span class="op">/</span><span class="kw">sd</span>(mpg) <span class="co"># we standardize mpg</span></a>
-<a class="sourceLine" id="cb219-2" data-line-number="2"><span class="kw">qqnorm</span>(mpg.stand); <span class="kw">qqline</span>(mpg.stand)</a></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" data-line-number="1">mpg.stand &lt;-<span class="st"> </span>(mpg<span class="op">-</span><span class="kw">mean</span>(mpg))<span class="op">/</span><span class="kw">sd</span>(mpg) <span class="co"># we standardize mpg</span></a>
+<a class="sourceLine" id="cb220-2" data-line-number="2"><span class="kw">qqnorm</span>(mpg.stand); <span class="kw">qqline</span>(mpg.stand)</a></code></pre></div>
 <p>What happened? Note that the distribution of quantiles did not change:</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" data-line-number="1"><span class="kw">hist</span>(<span class="kw">quantile</span>(mpg))</a>
-<a class="sourceLine" id="cb220-2" data-line-number="2"><span class="kw">hist</span>(<span class="kw">quantile</span>(mpg.stand))</a></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb221-1" data-line-number="1"><span class="kw">hist</span>(<span class="kw">quantile</span>(mpg))</a>
+<a class="sourceLine" id="cb221-2" data-line-number="2"><span class="kw">hist</span>(<span class="kw">quantile</span>(mpg.stand))</a></code></pre></div>
 </div>
 <div id="qualitative-variables" class="section level3">
 <h3><span class="header-section-number">6.2.2</span> Qualitative variables</h3>
 <p>The <code>summary()</code> and <code>table()</code> functions applied to a factor (or a vector of characters) count the occurrences of the different levels.</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb221-1" data-line-number="1"><span class="kw">summary</span>(cyl.factor)</a></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" data-line-number="1"><span class="kw">summary</span>(cyl.factor)</a></code></pre></div>
 <pre><code>##  4  6  8 
 ## 11  7 14</code></pre>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb223-1" data-line-number="1"><span class="kw">table</span>(cyl.factor)</a></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb224-1" data-line-number="1"><span class="kw">table</span>(cyl.factor)</a></code></pre></div>
 <pre><code>## cyl.factor
 ##  4  6  8 
 ## 11  7 14</code></pre>
 <p>To get the proportions:</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb225-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span> (cyl.factor))</a></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb226-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span> (cyl.factor))</a></code></pre></div>
 <pre><code>## cyl.factor
 ##       4       6       8 
 ## 0.34375 0.21875 0.43750</code></pre>
 <p>If there are missing values, <code>summary ()</code> also counts the <code>NA</code>:</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb227-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="ot">NA</span>, <span class="st">&#39;c&#39;</span>))</a>
-<a class="sourceLine" id="cb227-2" data-line-number="2"><span class="kw">summary</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb228-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">c</span>(<span class="st">&#39;a&#39;</span>, <span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="ot">NA</span>, <span class="st">&#39;c&#39;</span>))</a>
+<a class="sourceLine" id="cb228-2" data-line-number="2"><span class="kw">summary</span>(x)</a></code></pre></div>
 <pre><code>##    a    b    c NA&#39;s 
 ##    2    1    2    1</code></pre>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb229-1" data-line-number="1"><span class="kw">table</span>(x)</a></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" data-line-number="1"><span class="kw">table</span>(x)</a></code></pre></div>
 <pre><code>## x
 ## a b c 
 ## 2 1 2</code></pre>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb231-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(x)) <span class="co"># counts are divided by the total number of non-missing values</span></a></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">table</span>(x)) <span class="co"># counts are divided by the total number of non-missing values</span></a></code></pre></div>
 <pre><code>## x
 ##   a   b   c 
 ## 0.4 0.2 0.4</code></pre>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb233-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">summary</span>(x)) <span class="co"># counts are divided by the total number of values</span></a></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb234-1" data-line-number="1"><span class="kw">prop.table</span>(<span class="kw">summary</span>(x)) <span class="co"># counts are divided by the total number of values</span></a></code></pre></div>
 <pre><code>##         a         b         c      NA&#39;s 
 ## 0.3333333 0.1666667 0.3333333 0.1666667</code></pre>
 <p>We can use a <em>bar plot</em> or a pie chart (not recommended) to represent occurrences:</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb235-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(cyl.factor))</a></code></pre></div>
-<p><img src="Introduction-R_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" data-line-number="1"><span class="kw">pie</span>(<span class="kw">summary</span>(cyl.factor))</a></code></pre></div>
-<p><img src="Introduction-R_files/figure-html/unnamed-chunk-60-2.png" width="672" /></p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" data-line-number="1"><span class="kw">barplot</span>(<span class="kw">table</span>(cyl.factor))</a></code></pre></div>
+<p><img src="Introduction-R_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb237-1" data-line-number="1"><span class="kw">pie</span>(<span class="kw">summary</span>(cyl.factor))</a></code></pre></div>
+<p><img src="Introduction-R_files/figure-html/unnamed-chunk-61-2.png" width="672" /></p>
 </div>
 </div>
 <div id="bivariate-analysis" class="section level2">
@@ -334,22 +339,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>the covariance measures the average joint deviation from the means of the two variables</li>
 <li>Pearson’s linear correlation coefficient <span class="math inline">\(\rho\)</span> measures the intensity of linear dependence. <span class="math inline">\(\rho\)</span> is comprised between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>: its value is close to <span class="math inline">\(1\)</span> (resp. <span class="math inline">\(-1\)</span>) if there is a positive (resp. negative) linear dependence while its value is close to <span class="math inline">\(0\)</span> if there is no linear dependence.</li>
 </ul>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb237-1" data-line-number="1"><span class="kw">cov</span>(mpg, wt)</a>
-<a class="sourceLine" id="cb237-2" data-line-number="2"><span class="kw">cor</span>(mpg, wt)</a>
-<a class="sourceLine" id="cb237-3" data-line-number="3"><span class="co"># Try this:</span></a>
-<a class="sourceLine" id="cb237-4" data-line-number="4"><span class="co"># cov(mpg, wt)/sd(mpg)/sd(wt)</span></a></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb238-1" data-line-number="1"><span class="kw">cov</span>(mpg, wt)</a>
+<a class="sourceLine" id="cb238-2" data-line-number="2"><span class="kw">cor</span>(mpg, wt)</a>
+<a class="sourceLine" id="cb238-3" data-line-number="3"><span class="co"># Try this:</span></a>
+<a class="sourceLine" id="cb238-4" data-line-number="4"><span class="co"># cov(mpg, wt)/sd(mpg)/sd(wt)</span></a></code></pre></div>
 <p>Another type of correlation is Spearman’s correlation measuring the linear correlation between the <em>ranks</em> of the values of the two variables:</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb238-1" data-line-number="1"><span class="kw">cor</span>(mpg, wt, <span class="dt">method =</span> <span class="st">&#39;spearman&#39;</span>)</a>
-<a class="sourceLine" id="cb238-2" data-line-number="2"><span class="co"># Try this</span></a>
-<a class="sourceLine" id="cb238-3" data-line-number="3"><span class="co"># cor(rank(mpg), rank(wt))</span></a></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb239-1" data-line-number="1"><span class="kw">cor</span>(mpg, wt, <span class="dt">method =</span> <span class="st">&#39;spearman&#39;</span>)</a>
+<a class="sourceLine" id="cb239-2" data-line-number="2"><span class="co"># Try this</span></a>
+<a class="sourceLine" id="cb239-3" data-line-number="3"><span class="co"># cor(rank(mpg), rank(wt))</span></a></code></pre></div>
 <p>To graphically represent two quantitative variables we will use a a <em>scatter plot:</em></p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb239-1" data-line-number="1"><span class="kw">plot</span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> mpg) <span class="co"># x, y = coordinates of the points</span></a></code></pre></div>
-<p><img src="Introduction-R_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb240-1" data-line-number="1"><span class="co"># Alternative: </span></a>
-<a class="sourceLine" id="cb240-2" data-line-number="2"><span class="co"># plot (wt ~ mpg) # where the ~ reads &quot;wt according to mpg&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb240-1" data-line-number="1"><span class="kw">plot</span>(<span class="dt">x =</span> wt, <span class="dt">y =</span> mpg) <span class="co"># x, y = coordinates of the points</span></a></code></pre></div>
+<p><img src="Introduction-R_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb241-1" data-line-number="1"><span class="co"># Alternative: </span></a>
+<a class="sourceLine" id="cb241-2" data-line-number="2"><span class="co"># plot (wt ~ mpg) # where the ~ reads &quot;wt according to mpg&quot;</span></a></code></pre></div>
 <p>To find the least squares line (ie the linear model that best fits the data) and add it to the data:</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb241-1" data-line-number="1">m &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt)</a>
-<a class="sourceLine" id="cb241-2" data-line-number="2"><span class="kw">summary</span>(m)</a></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb242-1" data-line-number="1">m &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt)</a>
+<a class="sourceLine" id="cb242-2" data-line-number="2"><span class="kw">summary</span>(m)</a></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = mpg ~ wt)
@@ -368,38 +373,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Residual standard error: 3.046 on 30 degrees of freedom
 ## Multiple R-squared:  0.7528,	Adjusted R-squared:  0.7446 
 ## F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb243-1" data-line-number="1"><span class="co"># try:</span></a>
-<a class="sourceLine" id="cb243-2" data-line-number="2"><span class="co"># slope &lt;- sum ((wt-mean(wt)) * (mpg-mean(mpg))) / sum((wt-mean (wt))^2)</span></a>
-<a class="sourceLine" id="cb243-3" data-line-number="3"><span class="co"># intercept &lt;- mean (mpg) - slope * mean (wt)</span></a>
-<a class="sourceLine" id="cb243-4" data-line-number="4"><span class="kw">plot</span>(mpg <span class="op">~</span><span class="st"> </span>wt)</a>
-<a class="sourceLine" id="cb243-5" data-line-number="5"><span class="kw">abline</span>(m, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a></code></pre></div>
-<p><img src="Introduction-R_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb244-1" data-line-number="1"><span class="co"># try:</span></a>
+<a class="sourceLine" id="cb244-2" data-line-number="2"><span class="co"># slope &lt;- sum ((wt-mean(wt)) * (mpg-mean(mpg))) / sum((wt-mean (wt))^2)</span></a>
+<a class="sourceLine" id="cb244-3" data-line-number="3"><span class="co"># intercept &lt;- mean (mpg) - slope * mean (wt)</span></a>
+<a class="sourceLine" id="cb244-4" data-line-number="4"><span class="kw">plot</span>(mpg <span class="op">~</span><span class="st"> </span>wt)</a>
+<a class="sourceLine" id="cb244-5" data-line-number="5"><span class="kw">abline</span>(m, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</a></code></pre></div>
+<p><img src="Introduction-R_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
 </div>
 <div id="qualitative-variable-vs-qualitative-variable" class="section level3">
 <h3><span class="header-section-number">6.3.2</span> 3.2 Qualitative variable vs qualitative variable</h3>
 <p>We consider two qualitative variables measured on the same individuals. For these variables, we can make contingency tables and calculate the total and marginal relative frequencies (in rows and columns). Try the following:</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb244-1" data-line-number="1">t &lt;-<span class="st"> </span><span class="kw">table</span>(cyl, am)</a>
-<a class="sourceLine" id="cb244-2" data-line-number="2"><span class="co"># cyl and am are digital vectors,</span></a>
-<a class="sourceLine" id="cb244-3" data-line-number="3"><span class="co"># but to build the contingency table</span></a>
-<a class="sourceLine" id="cb244-4" data-line-number="4"><span class="co"># table() counts their terms.</span></a>
-<a class="sourceLine" id="cb244-5" data-line-number="5">t</a>
-<a class="sourceLine" id="cb244-6" data-line-number="6"><span class="kw">prop.table</span>(t) <span class="co"># Prob(cyl, am)</span></a>
-<a class="sourceLine" id="cb244-7" data-line-number="7"><span class="kw">prop.table</span>(t, <span class="dt">margin =</span> <span class="dv">1</span>) <span class="co"># P(am | cyl = 4), P(am | cyl = 6), P(am | cyl = 8)</span></a>
-<a class="sourceLine" id="cb244-8" data-line-number="8"><span class="kw">prop.table</span>(t, <span class="dt">margin =</span> <span class="dv">2</span>) <span class="co"># P(cyl | am = 0), P(cyl | am = 1)</span></a></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" data-line-number="1">t &lt;-<span class="st"> </span><span class="kw">table</span>(cyl, am)</a>
+<a class="sourceLine" id="cb245-2" data-line-number="2"><span class="co"># cyl and am are digital vectors,</span></a>
+<a class="sourceLine" id="cb245-3" data-line-number="3"><span class="co"># but to build the contingency table</span></a>
+<a class="sourceLine" id="cb245-4" data-line-number="4"><span class="co"># table() counts their terms.</span></a>
+<a class="sourceLine" id="cb245-5" data-line-number="5">t</a>
+<a class="sourceLine" id="cb245-6" data-line-number="6"><span class="kw">prop.table</span>(t) <span class="co"># Prob(cyl, am)</span></a>
+<a class="sourceLine" id="cb245-7" data-line-number="7"><span class="kw">prop.table</span>(t, <span class="dt">margin =</span> <span class="dv">1</span>) <span class="co"># P(am | cyl = 4), P(am | cyl = 6), P(am | cyl = 8)</span></a>
+<a class="sourceLine" id="cb245-8" data-line-number="8"><span class="kw">prop.table</span>(t, <span class="dt">margin =</span> <span class="dv">2</span>) <span class="co"># P(cyl | am = 0), P(cyl | am = 1)</span></a></code></pre></div>
 <p>The corresponding graphic is the <em>mosaic plot</em>:</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span> (<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co"># to put two charts side by side</span></a>
-<a class="sourceLine" id="cb245-2" data-line-number="2"><span class="kw">mosaicplot</span>(<span class="kw">table</span>(cyl, am)) <span class="co"># P(am | cyl = 4), P(am | cyl = 6), P(am | cyl = 8)</span></a>
-<a class="sourceLine" id="cb245-3" data-line-number="3"><span class="kw">mosaicplot</span>(<span class="kw">table</span>(am, cyl)) <span class="co"># P(cyl | am = 0), P(cyl | am = 1)</span></a></code></pre></div>
-<p><img src="Introduction-R_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb246-1" data-line-number="1"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span> (<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co"># to put two charts side by side</span></a>
+<a class="sourceLine" id="cb246-2" data-line-number="2"><span class="kw">mosaicplot</span>(<span class="kw">table</span>(cyl, am)) <span class="co"># P(am | cyl = 4), P(am | cyl = 6), P(am | cyl = 8)</span></a>
+<a class="sourceLine" id="cb246-3" data-line-number="3"><span class="kw">mosaicplot</span>(<span class="kw">table</span>(am, cyl)) <span class="co"># P(cyl | am = 0), P(cyl | am = 1)</span></a></code></pre></div>
+<p><img src="Introduction-R_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 </div>
 <div id="quantitative-variable-vs-qualitative-variable" class="section level3">
 <h3><span class="header-section-number">6.3.3</span> Quantitative variable vs qualitative variable</h3>
 <p>To evaluate a function <code>f</code> on the values of a <code>y</code> for each level of a factor <code>x</code> we use<code>tapply (X = y, INDEX = x, FUN = f)</code>. This is very useful when we want to calculate the statistics of a quantitative variable <code>y</code> grouped according to the levels of a qualitative variable<code>x</code>. To see this, try the following:</p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb246-1" data-line-number="1"><span class="kw">tapply</span>(mtcars<span class="op">$</span>mpg, mtcars<span class="op">$</span>cyl, mean) <span class="co"># the average miles per gallon according to the number of cylinders</span></a>
-<a class="sourceLine" id="cb246-2" data-line-number="2"><span class="kw">tapply</span>(mtcars<span class="op">$</span>mpg, mtcars<span class="op">$</span>cyl, summary)</a></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb247-1" data-line-number="1"><span class="kw">tapply</span>(mtcars<span class="op">$</span>mpg, mtcars<span class="op">$</span>cyl, mean) <span class="co"># the average miles per gallon according to the number of cylinders</span></a>
+<a class="sourceLine" id="cb247-2" data-line-number="2"><span class="kw">tapply</span>(mtcars<span class="op">$</span>mpg, mtcars<span class="op">$</span>cyl, summary)</a></code></pre></div>
 <p>Graphically, we can build the boxplot of the quantitative variable for each level of qualitative variable:</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb247-1" data-line-number="1"><span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">data =</span> mtcars)</a></code></pre></div>
-<p><img src="Introduction-R_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb248-1" data-line-number="1"><span class="kw">boxplot</span>(mpg <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">data =</span> mtcars)</a></code></pre></div>
+<p><img src="Introduction-R_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
 
 </div>
 </div>

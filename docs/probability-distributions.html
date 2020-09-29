@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>An Introduction to R</title>
+  <title>Chapter 8 Probability distributions | An Introduction to R</title>
   <meta name="description" content="Introduction to R prepared for the M1 AIRE bootcamp, Fall 2020, using the bookdown package." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="An Introduction to R" />
+  <meta property="og:title" content="Chapter 8 Probability distributions | An Introduction to R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="An Introduction to R" />
+  <meta name="twitter:title" content="Chapter 8 Probability distributions | An Introduction to R" />
   
   <meta name="twitter:description" content="Introduction to R prepared for the M1 AIRE bootcamp, Fall 2020, using the bookdown package." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="base-graphics.html"/>
 
-<link rel="next" href="introduction.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -200,25 +200,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">An Introduction to R</h1>
-<p class="author"><em>Vittorio Perduca (Université de Paris)</em></p>
-<p class="date"><em>September 2020</em></p>
+<div id="probability-distributions" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Probability distributions</h1>
+<p>Let <span class="math inline">\(X\)</span> be a random variable whose distribution is <code>law</code>:</p>
+<ul>
+<li><code>dlaw(x, parameters)</code> computes the probability <span class="math inline">\(P(X = x)\)</span> if <span class="math inline">\(X\)</span> is discrete, and the density value <span class="math inline">\(f(x)\)</span> if <span class="math inline">\(X\)</span> is continuous with density <span class="math inline">\(f\)</span>.</li>
+<li><code>plaw(q, parameters)</code> computes the value of the Cumualative Distribution Function (CDF) in <span class="math inline">\(q\)</span>, ie <span class="math inline">\(F(q) = P(X \leq q)\)</span>.</li>
+<li><code>qlaw(p, parameters)</code> gives the quantile of order <span class="math inline">\(p\)</span>, that is the value <span class="math inline">\(q\)</span> such that <span class="math inline">\(p = P (X \leq q)\)</span>.</li>
+<li><code>rlaw(m, parameters)</code> generates <span class="math inline">\(m\)</span> independent random numbers according to the distribution of <span class="math inline">\(X\)</span>, ie a sample of size <span class="math inline">\(m\)</span> of <span class="math inline">\(X\)</span>.</li>
+</ul>
+<p>Consult the help with <code>?dlaw</code>.</p>
+<p>The <code>set.seed()</code> function allows you to set the <em>seed</em> of the random number generator. This is useful when you want to obtain identical simulations:</p>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb265-1" data-line-number="1"><span class="kw">runif</span>(<span class="dv">1</span>) <span class="co"># uniform draw in [0,1]</span></a></code></pre></div>
+<pre><code>## [1] 0.6384378</code></pre>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb267-1" data-line-number="1"><span class="kw">runif</span>(<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [1] 0.3643132</code></pre>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb269-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">42</span>); <span class="kw">runif</span> (<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [1] 0.914806</code></pre>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb271-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">42</span>); <span class="kw">runif</span> (<span class="dv">1</span>)</a></code></pre></div>
+<pre><code>## [1] 0.914806</code></pre>
+<div id="discrete-distributions-of-discrete-random-variables" class="section level2">
+<h2><span class="header-section-number">8.1</span> Discrete distributions of discrete random variables</h2>
+<p>Important discrete random variables are</p>
+<ul>
+<li>Binomial variable <span class="math inline">\(\mathcal{B}(n, p)\)</span> counting the number of successes out of <span class="math inline">\(n\)</span> independent trials each with probability <span class="math inline">\(p\)</span> of success: <code>rbinom(m, size = n, prob = p)</code>. This law has <span class="math inline">\(n + 1\)</span> distinct possible values: <span class="math inline">\(0,1,\ldots, n\)</span>.</li>
+<li>Bernoulli variable <span class="math inline">\(\mathcal{B}(p)\)</span> reporting the outcome of a binary trial with probability <span class="math inline">\(p\)</span> of success: <code>rbinom(m, size = 1, prob = p)</code></li>
+<li>Geometric variable <span class="math inline">\(\mathcal{G}(p)\)</span> counting the number of failures before success in independent trials: <code>rgeom(n, prob = p)</code></li>
+<li>Poisson variable <span class="math inline">\(\mathcal{P}(\lambda)\)</span>: <code>rpois(m, lambda = lambda)</code></li>
+</ul>
+<p>An important random process which is very useful to simulate in many situations, is the withdrawl of <span class="math inline">\(n\)</span> balls of different colors out of a box. This can be done with</p>
+<p><code>sample(x = box, size = n, replace = TRUE / FALSE, prob = probability of the different colors)</code></p>
+<p>For instance:</p>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb273-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;red&#39;</span>, <span class="st">&#39;black&#39;</span>, <span class="st">&#39;green&#39;</span>)</a>
+<a class="sourceLine" id="cb273-2" data-line-number="2"><span class="kw">sample</span>(<span class="dt">x =</span> x, <span class="dt">size =</span> <span class="dv">20</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>, <span class="dt">prob =</span> <span class="kw">c</span>(<span class="dv">2</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">4</span><span class="op">/</span><span class="dv">10</span>,<span class="dv">4</span><span class="op">/</span><span class="dv">10</span>))</a></code></pre></div>
+<pre><code>##  [1] &quot;red&quot;   &quot;black&quot; &quot;red&quot;   &quot;green&quot; &quot;green&quot; &quot;green&quot; &quot;black&quot; &quot;green&quot; &quot;green&quot;
+## [10] &quot;green&quot; &quot;green&quot; &quot;red&quot;   &quot;black&quot; &quot;green&quot; &quot;red&quot;   &quot;red&quot;   &quot;black&quot; &quot;green&quot;
+## [19] &quot;green&quot; &quot;red&quot;</code></pre>
 </div>
-<div id="welcome" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Welcome</h1>
-<p>This document is a tutorial for self-learning the basic use of <code>R</code>. It was prepared for the students enrolled in the first year of the <a href="https://www.cri-paris.org/en/education#04._aire-master">AIRE Life Sciences Master Program</a> of the Centre de Recherche Interdisciplinaire at the Université de Paris.</p>
-<p><img src="images/san-restituto.jpg" width="90%" style="display: block; margin: auto;" /></p>
-<p>This document was written with the <code>R</code> package <code>bookdown</code> <span class="citation">(Xie <a href="#ref-R-bookdown">2020</a>)</span>, <span class="citation">(Xie <a href="#ref-bookdown2016">2016</a>)</span> and is under continuous development, please report any issues to <code>vittorio.perduca at u-paris.fr</code>. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</p>
+<div id="continuous-distributions" class="section level2">
+<h2><span class="header-section-number">8.2</span> Continuous distributions</h2>
+<p>Important continuous distributions are:</p>
+<ul>
+<li>Uniform distribution <span class="math inline">\(\mathcal{U}_{[a, b]}\)</span> in the interval <span class="math inline">\([a,b]\)</span>: <code>runif(m, min = a, max = b)</code></li>
+<li>Normal variable <span class="math inline">\(\mathcal{N}(\mu, \sigma^2)\)</span>: <code>rnorm(m, mean = mu, sd = sigma)</code></li>
+<li>Exponential law <span class="math inline">\(\mathcal{E}(\lambda)\)</span>: <code>rexp(m, rate = lambda)</code></li>
+<li>Chi-square law with <span class="math inline">\(r\)</span> degrees of freedom <span class="math inline">\(\mathcal{\chi}^2 (r)\)</span>: <code>rchisq (m, df = r)</code></li>
+<li>Student’s law with <span class="math inline">\(r\)</span> degrees of freedom: <code>rt(m, df = r)</code></li>
+</ul>
+</div>
+<div id="example-the-law-of-large-numbers" class="section level2">
+<h2><span class="header-section-number">8.3</span> Example: the Law of Large Numbers</h2>
+<p>We toss <span class="math inline">\(n\)</span> times a biased coin such that the probability of getting head is <span class="math inline">\(p=0.3\)</span> and then we calculate the proportion of heads obtained. The Law of Large Numbers says that this proportion gets closer and closer to <span class="math inline">\(p\)</span> as <span class="math inline">\(n\)</span> gets larger.</p>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb275-1" data-line-number="1"><span class="co"># 1: head, 0: tail</span></a>
+<a class="sourceLine" id="cb275-2" data-line-number="2">sample =<span class="st"> </span><span class="kw">sample</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="dt">size =</span> <span class="dv">1000</span>, <span class="dt">replace =</span> T, <span class="dt">prob =</span> <span class="kw">c</span>(.<span class="dv">7</span>, <span class="fl">.3</span>))</a>
+<a class="sourceLine" id="cb275-3" data-line-number="3"><span class="kw">plot</span>(<span class="kw">cumsum</span>(sample)<span class="op">/</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">1000</span>),</a>
+<a class="sourceLine" id="cb275-4" data-line-number="4">     <span class="dt">type =</span> <span class="st">&#39;l&#39;</span>,</a>
+<a class="sourceLine" id="cb275-5" data-line-number="5">     <span class="dt">main =</span> <span class="st">&#39;Law of large numbers&#39;</span>,</a>
+<a class="sourceLine" id="cb275-6" data-line-number="6">     <span class="dt">ylim =</span> <span class="kw">c</span> (<span class="dv">0</span>,<span class="fl">0.7</span>),</a>
+<a class="sourceLine" id="cb275-7" data-line-number="7">     <span class="dt">xlab =</span> <span class="st">&#39;Sample size&#39;</span>)</a>
+<a class="sourceLine" id="cb275-8" data-line-number="8"><span class="kw">abline</span> (<span class="dt">h =</span> <span class="fl">.3</span>, <span class="dt">col =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb275-9" data-line-number="9"><span class="kw">legend</span> (<span class="dt">x =</span> <span class="st">&#39;top&#39;</span>,</a>
+<a class="sourceLine" id="cb275-10" data-line-number="10">       <span class="dt">lty =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="dv">1</span><span class="op">:</span><span class="st"> </span><span class="dv">2</span>,</a>
+<a class="sourceLine" id="cb275-11" data-line-number="11">       <span class="dt">legend =</span> <span class="kw">c</span> (<span class="st">&#39;empirical frequency of 1&#39;</span>, <span class="st">&#39;probability of 1&#39;</span>),</a>
+<a class="sourceLine" id="cb275-12" data-line-number="12">       <span class="dt">bty =</span> <span class="st">&#39;n&#39;</span>)</a></code></pre></div>
+<p><img src="Introduction-R_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
+<p>Notes:</p>
+<ul>
+<li>To get the number of heads as a function of <span class="math inline">\(n\)</span> we used the <code>cumsum()</code> function. Try the following:</li>
+</ul>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb276-1" data-line-number="1"><span class="co"># for each n we count how many 1s there are in the first n positions:</span></a>
+<a class="sourceLine" id="cb276-2" data-line-number="2"><span class="kw">cumsum</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)) </a>
+<a class="sourceLine" id="cb276-3" data-line-number="3"><span class="co"># for each n we calculate the proportions of 1s in the first n positions</span></a>
+<a class="sourceLine" id="cb276-4" data-line-number="4"><span class="kw">cumsum</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>))<span class="op">/</span><span class="dv">1</span><span class="op">:</span><span class="dv">7</span></a></code></pre></div>
+<ul>
+<li>Instead of <code>sample()</code> we could have used <code>rbinom(n = 1000, size = 1, prob = .3)</code></li>
+</ul>
 
-</div>
-<h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-bookdown2016">
+<div>
 <p>Xie, Yihui. 2016. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.</p>
 </div>
-<div id="ref-R-bookdown">
-<p>Xie, Yihui. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+<div>
+<p>———. 2020. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown">https://CRAN.R-project.org/package=bookdown</a>.</p>
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -226,8 +291,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="base-graphics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
