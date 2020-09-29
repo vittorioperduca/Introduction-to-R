@@ -445,7 +445,7 @@ You can access the mode of an object with the \texttt{mode\ ()} function:
 ##     else switch(tx <- typeof(x), double = , integer = "numeric", 
 ##         closure = , builtin = , special = "function", tx)
 ## }
-## <bytecode: 0x7f8d9646aa90>
+## <bytecode: 0x7fae3e7a0e90>
 ## <environment: namespace:base>
 \end{verbatim}
 
@@ -1230,8 +1230,50 @@ Any variable defined in a function is \emph{local} and does not appear in the wo
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{exercices}{%
-\section{Exercices}\label{exercices}}
+\hypertarget{exercises}{%
+\section{Exercises}\label{exercises}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Let \(x\) be a vector with the elements of a sample:
+\end{enumerate}
+
+\begin{verbatim}
+##  [1] 45 63 17 32 54 57 41 29 34 37 18 39 46 43
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Write a code to give
+
+  \begin{itemize}
+  \tightlist
+  \item
+    the third element of the sample
+  \item
+    the four elements of the sample
+  \item
+    the items strictly greater than 35.
+  \item
+    all elements except those in positions 3, 9 and 12.
+  \end{itemize}
+\item
+  Replace the first element by a missing value and give the position of all elements less than 30.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Write a function \texttt{weighted\_average} that takes as inputs two vectors \(x=(x_1,\ldots,x_n)\) and \(w=(w_1,\ldots,w_n)\) and computes the weighted mean
+  \[
+  \frac{1}{\sum_{i=1}^n w_i}\sum_{i=1}^nw_ix_i
+  \]
+\end{enumerate}
 
 \hypertarget{lists-and-data-frames}{%
 \chapter{Lists and data frames}\label{lists-and-data-frames}}
@@ -1529,8 +1571,8 @@ If the dataset is stored (or must be saved up) locally, it is necessary to know 
 
 Remember that in Linux and macOS machines, \texttt{\textasciitilde{}/} is a shortcut for \texttt{/Users/username}. For Windows machines, the address syntax is slightly different. For example we use \texttt{\textbackslash{}} instead of \texttt{/}.
 
-\hypertarget{exercice}{%
-\section{Exercice}\label{exercice}}
+\hypertarget{exercise}{%
+\section{Exercise}\label{exercise}}
 
 Download the text file \href{https://raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/hepatitis.txt}{raw.githubusercontent.com/vittorioperduca/Introduction-to-R/master/data/hepatitis.txt} to your working directory.
 
@@ -1633,7 +1675,7 @@ An useful tool to show a sample distribution is the \emph{boxplot}:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-50-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-51-1.pdf}
 
 We recall that in a boxplot:
 
@@ -1665,7 +1707,7 @@ Try the following:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-51-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-52-1.pdf}
 
 The other graphical tool to represent the distribution of a quantitative variable is the histogram:
 
@@ -1675,7 +1717,7 @@ The other graphical tool to represent the distribution of a quantitative variabl
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-52-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-53-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1700,7 +1742,7 @@ By default the vertical axis gives the number of observations in each interval. 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-53-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-54-1.pdf}
 
 We can also compare the distribution of the sample with the theoretical distribution of the standard normal distribution through a \emph{QQ-plot}. This plot compare the empircal quantiles of the sample with the theoretical quantiles of the standard normal, if the observations in the sample were normally distributed than the points in the QQ-plot should be aligned along the bisector:
 
@@ -1711,7 +1753,7 @@ We can also compare the distribution of the sample with the theoretical distribu
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-54-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-55-1.pdf}
 
 \textbf{Remark.} Compare the previous QQ-plot to that of the \emph{standardized} sample:
 
@@ -1830,7 +1872,7 @@ We can use a \emph{bar plot} or a pie chart (not recommended) to represent occur
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-60-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-61-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1838,7 +1880,7 @@ We can use a \emph{bar plot} or a pie chart (not recommended) to represent occur
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-60-2.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-61-2.pdf}
 
 \hypertarget{bivariate-analysis}{%
 \section{Bivariate analysis}\label{bivariate-analysis}}
@@ -1885,7 +1927,7 @@ To graphically represent two quantitative variables we will use a a \emph{scatte
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-63-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-64-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1934,7 +1976,7 @@ To find the least squares line (ie the linear model that best fits the data) and
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-64-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-65-1.pdf}
 
 \hypertarget{qualitative-variable-vs-qualitative-variable}{%
 \subsection{3.2 Qualitative variable vs qualitative variable}\label{qualitative-variable-vs-qualitative-variable}}
@@ -1964,7 +2006,7 @@ The corresponding graphic is the \emph{mosaic plot}:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-66-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-67-1.pdf}
 
 \hypertarget{quantitative-variable-vs-qualitative-variable}{%
 \subsection{Quantitative variable vs qualitative variable}\label{quantitative-variable-vs-qualitative-variable}}
@@ -1986,7 +2028,7 @@ Graphically, we can build the boxplot of the quantitative variable for each leve
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-68-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-69-1.pdf}
 
 \hypertarget{base-graphics}{%
 \chapter{Base graphics}\label{base-graphics}}
@@ -2006,7 +2048,7 @@ We have already seen how to add a line to a scatter plot, to complete the graph 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-69-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-70-1.pdf}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2032,7 +2074,7 @@ We can also add a third dimension by coloring the points according to a conditio
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-70-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-71-1.pdf}
 
 In general, \texttt{abline(a,\ b)} allows to add a line with intercept \texttt{a} and slope\texttt{b} to an existing plot. For example, an alternative way to add the regression line is as follows:
 
@@ -2056,7 +2098,7 @@ To add any line (not necessarily a straight line) we use the \texttt{lines()} fu
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-72-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-73-1.pdf}
 
 We can add new points using \texttt{points()}:
 
@@ -2073,7 +2115,7 @@ We can add new points using \texttt{points()}:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-73-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-74-1.pdf}
 
 We can control the range of axes using \texttt{xlim()} and \texttt{ylim()}:
 
@@ -2085,7 +2127,7 @@ We can control the range of axes using \texttt{xlim()} and \texttt{ylim()}:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-74-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-75-1.pdf}
 
 \hypertarget{line-graphs}{%
 \section{Line graphs}\label{line-graphs}}
@@ -2099,7 +2141,7 @@ The \texttt{lines()} function adds a line to an existing graph and cannot be use
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-75-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-76-1.pdf}
 
 The \texttt{type} parameter allows you to connect (or not) the points in different ways:
 
@@ -2113,7 +2155,7 @@ The \texttt{type} parameter allows you to connect (or not) the points in differe
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-76-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-77-1.pdf}
 
 With \texttt{plot\ =\ \textquotesingle{}h\textquotesingle{}} we get a bar plot:
 
@@ -2123,7 +2165,7 @@ With \texttt{plot\ =\ \textquotesingle{}h\textquotesingle{}} we get a bar plot:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-77-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-78-1.pdf}
 
 \hypertarget{graphical-parameters}{%
 \section{Graphical parameters}\label{graphical-parameters}}
@@ -2159,7 +2201,7 @@ To impose parameters on all the graphics produced during a session, we will use 
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-78-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-79-1.pdf}
 
 Changes are implemented until when the session is closed, or the graphics engine is reset by \texttt{dev.off()} or by clicking on the \texttt{Clear\ all\ plots} brush in \texttt{RStudio}.
 
@@ -2178,7 +2220,7 @@ Changes are implemented until when the session is closed, or the graphics engine
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-79-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-80-1.pdf}
 
 We modify the parameter which sets the left margin:
 
@@ -2193,7 +2235,7 @@ We modify the parameter which sets the left margin:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-80-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-81-1.pdf}
 
 \hypertarget{histograms}{%
 \section{Histograms}\label{histograms}}
@@ -2220,7 +2262,7 @@ To superimpose the curve of a given density:
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-82-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-83-1.pdf}
 
 Rather than viewing the histogram of the data, we can show the estimated density (using kernel density estimation methods):
 
@@ -2231,7 +2273,7 @@ Rather than viewing the histogram of the data, we can show the estimated density
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-83-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-84-1.pdf}
 
 \hypertarget{exercises}{%
 \section{Exercises}\label{exercises}}
@@ -2253,7 +2295,7 @@ Rather than viewing the histogram of the data, we can show the estimated density
   \end{itemize}
 \end{enumerate}
 
-\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-84-1.pdf}
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-85-1.pdf}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -2272,6 +2314,169 @@ Rather than viewing the histogram of the data, we can show the estimated density
     Describe the relationship between the variables \texttt{age} and\texttt{class}.
   \end{itemize}
 \end{enumerate}
+
+\hypertarget{probability-distributions}{%
+\chapter{Probability distributions}\label{probability-distributions}}
+
+Let \(X\) be a random variable whose distribution is \texttt{law}:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{dlaw(x,\ parameters)} computes the probability \(P(X = x)\) if \(X\) is discrete, and the density value \(f(x)\) if \(X\) is continuous with density \(f\).
+\item
+  \texttt{plaw(q,\ parameters)} computes the value of the Cumualative Distribution Function (CDF) in \(q\), ie \(F(q) = P(X \leq q)\).
+\item
+  \texttt{qlaw(p,\ parameters)} gives the quantile of order \(p\), that is the value \(q\) such that \(p = P (X \leq q)\).
+\item
+  \texttt{rlaw(m,\ parameters)} generates \(m\) independent random numbers according to the distribution of \(X\), ie a sample of size \(m\) of \(X\).
+\end{itemize}
+
+Consult the help with \texttt{?dlaw}.
+
+The \texttt{set.seed()} function allows you to set the \emph{seed} of the random number generator. This is useful when you want to obtain identical simulations:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{runif}\NormalTok{(}\DecValTok{1}\NormalTok{) }\CommentTok{# uniform draw in [0,1]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.8366401
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{runif}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7943818
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{42}\NormalTok{); }\KeywordTok{runif}\NormalTok{ (}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.914806
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{42}\NormalTok{); }\KeywordTok{runif}\NormalTok{ (}\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.914806
+\end{verbatim}
+
+\hypertarget{discrete-distributions-of-discrete-random-variables}{%
+\section{Discrete distributions of discrete random variables}\label{discrete-distributions-of-discrete-random-variables}}
+
+Important discrete random variables are
+
+\begin{itemize}
+\tightlist
+\item
+  Binomial variable \(\mathcal{B}(n, p)\) counting the number of successes out of \(n\) independent trials each with probability \(p\) of success: \texttt{rbinom(m,\ size\ =\ n,\ prob\ =\ p)}. This law has \(n + 1\) distinct possible values: \(0,1,\ldots, n\).
+\item
+  Bernoulli variable \(\mathcal{B}(p)\) reporting the outcome of a binary trial with probability \(p\) of success: \texttt{rbinom(m,\ size\ =\ 1,\ prob\ =\ p)}
+\item
+  Geometric variable \(\mathcal{G}(p)\) counting the number of failures before success in independent trials: \texttt{rgeom(n,\ prob\ =\ p)}
+\item
+  Poisson variable \(\mathcal{P}(\lambda)\): \texttt{rpois(m,\ lambda\ =\ lambda)}
+\end{itemize}
+
+An important random process which is very useful to simulate in many situations, is the withdrawl of \(n\) balls of different colors out of a box. This can be done with
+
+\texttt{sample(x\ =\ box,\ size\ =\ n,\ replace\ =\ TRUE\ /\ FALSE,\ prob\ =\ probability\ of\ the\ different\ colors)}
+
+For instance:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{'red'}\NormalTok{, }\StringTok{'black'}\NormalTok{, }\StringTok{'green'}\NormalTok{)}
+\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ x, }\DataTypeTok{size =} \DecValTok{20}\NormalTok{, }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{prob =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\OperatorTok{/}\DecValTok{10}\NormalTok{,}\DecValTok{4}\OperatorTok{/}\DecValTok{10}\NormalTok{,}\DecValTok{4}\OperatorTok{/}\DecValTok{10}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "red"   "black" "red"   "green" "green" "green" "black" "green" "green"
+## [10] "green" "green" "red"   "black" "green" "red"   "red"   "black" "green"
+## [19] "green" "red"
+\end{verbatim}
+
+\hypertarget{continuous-distributions}{%
+\section{Continuous distributions}\label{continuous-distributions}}
+
+Important continuous distributions are:
+
+\begin{itemize}
+\tightlist
+\item
+  Uniform distribution \(\mathcal{U}_{[a, b]}\) in the interval \([a,b]\): \texttt{runif(m,\ min\ =\ a,\ max\ =\ b)}
+\item
+  Normal variable \(\mathcal{N}(\mu, \sigma^2)\): \texttt{rnorm(m,\ mean\ =\ mu,\ sd\ =\ sigma)}
+\item
+  Exponential law \(\mathcal{E}(\lambda)\): \texttt{rexp(m,\ rate\ =\ lambda)}
+\item
+  Chi-square law with \(r\) degrees of freedom \(\mathcal{\chi}^2 (r)\): \texttt{rchisq\ (m,\ df\ =\ r)}
+\item
+  Student's law with \(r\) degrees of freedom: \texttt{rt(m,\ df\ =\ r)}
+\end{itemize}
+
+\hypertarget{example-the-law-of-large-numbers}{%
+\section{Example: the Law of Large Numbers}\label{example-the-law-of-large-numbers}}
+
+We toss \(n\) times a biased coin such that the probability of getting head is \(p=0.3\) and then we calculate the proportion of heads obtained. The Law of Large Numbers says that this proportion gets closer and closer to \(p\) as \(n\) gets larger.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# 1: head, 0: tail}
+\NormalTok{sample =}\StringTok{ }\KeywordTok{sample}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\DataTypeTok{size =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{replace =}\NormalTok{ T, }\DataTypeTok{prob =} \KeywordTok{c}\NormalTok{(.}\DecValTok{7}\NormalTok{, }\FloatTok{.3}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{cumsum}\NormalTok{(sample)}\OperatorTok{/}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{1000}\NormalTok{),}
+     \DataTypeTok{type =} \StringTok{'l'}\NormalTok{,}
+     \DataTypeTok{main =} \StringTok{'Law of large numbers'}\NormalTok{,}
+     \DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.7}\NormalTok{),}
+     \DataTypeTok{xlab =} \StringTok{'Sample size'}\NormalTok{)}
+\KeywordTok{abline}\NormalTok{ (}\DataTypeTok{h =} \FloatTok{.3}\NormalTok{, }\DataTypeTok{col =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{legend}\NormalTok{ (}\DataTypeTok{x =} \StringTok{'top'}\NormalTok{,}
+       \DataTypeTok{lty =} \DecValTok{1}\NormalTok{, }\DataTypeTok{col =} \DecValTok{1}\OperatorTok{:}\StringTok{ }\DecValTok{2}\NormalTok{,}
+       \DataTypeTok{legend =} \KeywordTok{c}\NormalTok{ (}\StringTok{'empirical frequency of 1'}\NormalTok{, }\StringTok{'probability of 1'}\NormalTok{),}
+       \DataTypeTok{bty =} \StringTok{'n'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Introduction-R_files/figure-latex/unnamed-chunk-88-1.pdf}
+
+Notes:
+
+\begin{itemize}
+\tightlist
+\item
+  To get the number of heads as a function of \(n\) we used the \texttt{cumsum()} function. Try the following:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# for each n we count how many 1s there are in the first n positions:}
+\KeywordTok{cumsum}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{)) }
+\CommentTok{# for each n we calculate the proportions of 1s in the first n positions}
+\KeywordTok{cumsum}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{))}\OperatorTok{/}\DecValTok{1}\OperatorTok{:}\DecValTok{7}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Instead of \texttt{sample()} we could have used \texttt{rbinom(n\ =\ 1000,\ size\ =\ 1,\ prob\ =\ .3)}
+\end{itemize}
 
 \bibliography{ref.bib}
 
