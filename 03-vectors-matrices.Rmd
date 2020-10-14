@@ -195,7 +195,7 @@ x
 ```
 - Write a code to give 
     * the third element of the sample
-    * the four elements of the sample
+    * the first four elements of the sample
     * the items strictly greater than 35.
     * all elements except those in positions 3, 9 and 12.
 - Replace the first element by a missing value and give the position of all elements less than 30. 
